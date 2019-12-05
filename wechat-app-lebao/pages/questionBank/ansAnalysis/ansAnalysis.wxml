@@ -1,0 +1,47 @@
+<!--pages/questionBank/ansAnalysis/ansAnalysis.wxml-->
+<view class='analysis'>
+  <view class='imagesrc'>
+    <image mode='aspectFit' src='{{bg_analysisUrl}}'></image>
+    <view class='text1'>答题结束，本轮共答对{{right}}题！</view>
+    <view class='text2'>花费时长 <text>{{hours}}:{{minute}}:{{second}}</text></view>
+    <view class='text3'>奖励宝宝币：{{score}}分</view>
+  </view>
+  <view class="button" style="background-image: url('{{buttonUrl}}');" bindtap='getAnalysis'>
+     答题解析 
+  </view>
+  <view class="button" style="background-image: url('{{buttonUrl}}');" bindtap='goBack'>
+     返回 
+  </view>
+  <!--隐藏区域  -->
+  <view class='maskLayer' wx:if="{{chooseSize}}" ></view>
+    <view class='content' wx:if="{{chooseSize}}" animation='{{animationData}}'>
+      <view class='analysis-title'>
+        <view class='analysis-title-left'>答题解析</view>
+        <view class='analysis-title-right'><image mode='aspectFit' src='{{cancelUrl}}' bindtap='hideModal' ></image></view>
+      </view>
+      <view class='analysis-index'>{{questionIndex}}/{{total}}</view>
+      <view class='question1' >
+          {{questionIndex}}、{{curQuestion}}
+        <view class='answerList' wx:for='{{curAnswerList}}' wx:key='*this'>
+          <block wx:if='{{(item.isTrue==1&&item.isChosen==1)||item.isTrue==1}}'>
+            <view  class="index-1" ><text>{{item.identityId}}</text></view>
+            <view  class="answer-1">{{item.answer}}</view>
+          </block>
+          <block  wx:elif='{{item.isChosen==1&&item.isTrue==0}}'>
+            <view class="index-2" ><text>{{item.identityId}}</text></view>
+            <view class="answer-2">{{item.answer}}</view>
+          </block>
+          <block  wx:else >
+            <view class="index" ><text>{{item.identityId}}</text></view>
+            <view class="answer">{{item.answer}}</view>
+          </block>
+          
+        </view>
+    </view>
+      <view class='analysis-title1'>答题解析：</view>
+      <view class='analysis-detail'>{{analysis}}</view>
+      <view wx:if='{{hasNext}}' class="button" style="background-image: url('{{buttonUrl}}');" bindtap='getNext'>
+         下一题 
+      </view>
+  </view>
+</view>

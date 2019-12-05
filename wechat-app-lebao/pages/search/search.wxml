@@ -1,0 +1,36 @@
+<!--pages/search/search.wxml-->
+<import src='../../template/contact/contact.wxml' />
+<template is='contact' data='{{scrollTop}}'></template>
+<view class='content' style='height:{{contentHeight}}px'>
+  <view class='search'>
+    <icon class='iconfont icon-search'></icon>
+    <input class='search-input' value='{{search}}' type='text' focus="{{inputShowed}}" bindinput='inputSearch' confirm-type='搜索' bindconfirm='search'></input>
+    <view class='search-text' bindtap='search'>搜索</view>
+    <icon wx:if='{{search.length>0}}' class='iconfont icon-close' bindtap='clearContent'></icon>
+  </view>
+  <scroll-view class='schoollist {{isIphone5?"schoollist-i5":""}}' scroll-y>
+    <view wx:if='{{total==0}}' class='notfound'>
+      <icon class='iconfont icon-notfound'></icon>
+      <text class='notfound-text'>啊哦 ╯ ﹏ ╰ 什么都没有找到</text>
+    </view>
+    <view wx:elif='{{total == -1}}' class='history'>
+      <view class='title'>
+        <view class='title-text'>搜索历史</view>
+        <view class='delete' bindtap='clearSearchHistory'>
+          <icon class='iconfont icon-garbage'></icon>
+        </view>
+      </view>
+      <view class='history-list'>
+        <view class='history-item' wx:for='{{historyList}}' bindtap='setSearch' data-content='{{item}}'>
+          {{item}}
+        </view>
+      </view>
+    </view>
+    <view wx:else>
+      <view wx:for='{{schoolList}}' wx:key='*this' class='school {{isIphone5?"school-i5":""}}' data-id='{{item.id}}' bindtap='goToDetails'>
+        <image class='school-pic' mode='aspectFill' src='{{item.src}}'></image>
+        <text class='school-name'>{{item.name}}</text>
+      </view>
+    </view>
+  </scroll-view>
+</view>

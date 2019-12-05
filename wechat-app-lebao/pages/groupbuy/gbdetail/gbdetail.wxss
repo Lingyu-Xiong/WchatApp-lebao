@@ -1,0 +1,140 @@
+page{
+  background-color:#fff;
+}
+.course-logo-box{
+  width:100%;
+  height:60vw;
+}
+.course-logo-img{
+  width:100%;
+  height:60vw;
+}
+.shibai-box{
+  text-align: center;
+  padding:0 40px;
+  height:60vw;
+}
+.shibai-img{
+  width:40px;
+  height:40px;
+  margin: 8vw 0 5vw 0;
+}
+.shibai-title{
+  font-size:18px;
+  color:#FB4E4E;
+  margin-bottom:5vw;
+}
+.chenggong{
+  color:#232323;
+}
+.shibai-con{
+  font-size:16px;
+  color:#232323;
+}
+.course-info{
+  padding:15px;
+  border-bottom: 3px #eee solid;
+}
+.cinfo-price{
+  font-size:16px;
+  display:flex;
+  margin-bottom: 5px;
+}
+.originalPrice {
+  color: #c5c5c5;
+  text-decoration: line-through;
+}
+.discountPrice {
+  color: #e7010d;
+}
+.cinfo-name{
+  font-size:17px;
+  color:#466466;
+}
+.group-info{
+  text-align: center;
+  display:flex;
+  flex-direction: column;
+}
+
+.ginfo-avatar-list{
+display:flex;
+justify-content: center;
+margin-top:18px;
+}
+.avatar-single{
+  margin:0 10px;
+}
+.avatar-single-box{
+ border-radius: 50%;
+  overflow: hidden;
+  width:40px;
+  height:40px;
+}
+.avatar-single-box.leader{
+  border:1.8px #FB4E4E solid;
+}
+.leader-label{
+font-size:12px;
+background-color:#FB4E4E;
+color:#fff;
+width:43px;
+height:18px;
+border-radius: 20px;
+line-height: 18px;
+margin-top:-5px;
+z-index:99;
+}
+.user-avatar{
+  width:100%;
+  height:100%;
+}
+
+.ginfo-detail{
+  display:flex;
+  font-size:16px;
+  color:#466466;
+  margin:18px 0 0 0;
+  justify-content: center;
+}
+.detail-1{
+    margin-right:10px;
+}
+.detail-1 text{
+  color:#FB4E4E;
+}
+.invite-btn{
+  width:220px;
+  height:30px;
+  line-height:30px;
+  background-color:#FB4E4E;
+  color:#fff;
+  border-radius: 20px;
+  margin:18px calc(50% - 110px);
+  font-size: 16px;
+}
+.bottom-rule{
+  position:fixed;
+  bottom: 10px;
+  display:flex;
+  justify-content: space-between;
+  font-size:16px;
+  border-top:1px #eee solid;
+  width:calc(100% - 20px);
+  padding:0 10px;
+  height:40px;
+  line-height:40px;
+}
+.rule-left{
+  color:#466466;
+}
+.rule-right{
+  color:#c5c5c5;
+}
+.backtohome{
+  font-size:16px;
+  color:#466466;
+  text-align: center;
+  margin-top:30px;
+  text-decoration: underline;
+}

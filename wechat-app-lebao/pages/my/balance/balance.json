@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "余额",
+    "navigationBarBackgroundColor":"#25aab1",
+  "navigationBarTextStyle":"white",
+  "usingComponents": {
+    "Select": "/components/select/select"
+  }
+}

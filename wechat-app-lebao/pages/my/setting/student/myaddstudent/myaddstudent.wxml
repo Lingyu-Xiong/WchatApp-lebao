@@ -1,0 +1,72 @@
+<!--pages/my/setting/student/myaddstudent/myaddstudent.wxml-->
+<view class='detail-content'>
+  <view class='detail-list'>
+    <text>姓名</text>
+    <view class='detail-list-right'>
+      <input type='text' placeholder='请输入姓名' bindinput='getname'></input>
+    </view>
+  </view>
+  <view class='detail-list'>
+    <text>性别</text>
+    <view class='detail-list-right'>
+      <radio-group class="radio-group" bindchange="radioChange">
+        <label class="radio" wx:for="{{sex}}">
+          <radio color='#25aab1' value="{{item.value}}" checked="{{item.checked}}" /> {{item.name}}
+        </label>
+      </radio-group>
+    </view>
+  </view>
+  <view class='detail-list'>
+    <text>就读学校区域</text>
+    <view class='detail-list-right'>
+       <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{area}}">
+        <view class="picker">
+          {{area[0][multiIndex[0]]}} {{area[1][multiIndex[1]]}} {{area[2][multiIndex[2]]}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class='detail-list'>
+    <text>就读学校</text>
+    <view class='detail-list-right'>
+      <picker bindchange="bindschChange" value="{{schindex}}" range="{{schList}}" range-key="name" bindinput='beforeGetsch'>
+        <view class="picker">
+          {{schList[schindex].name}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class='detail-list'>
+    <text>年级</text>
+    <view class='detail-list-right'>
+      <input type='number' placeholder='请输入年级' bindinput='getgrade'></input>
+    </view>
+  </view>
+  <view class='detail-list'>
+    <text>生日</text>
+    <view class='detail-list-right'>
+      <picker mode="date" value="{{date}}" start="1900-09-01" end="2019-09-01" bindchange="bindDateChange">
+        <view class="picker">
+          {{birthday}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class='detail-list'>
+    <text>关系</text>
+    <view class='detail-list-right'>
+      <picker bindchange="bindrelaChange" value="{{index}}" range="{{array}}">
+        <view class="picker">
+          {{relation}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class='detail-list'>
+    <text>电话</text>
+    <view class='detail-list-right'>
+      <input type='number' placeholder='请输入电话' bindinput='getmobile'></input>
+    </view>
+  </view>
+</view>
+<view class='add-confirm' bindtap='adddetailcon'>保存</view>

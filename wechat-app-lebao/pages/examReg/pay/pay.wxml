@@ -1,0 +1,36 @@
+<view class='pay-con'>
+  <view class='price'>¥{{payPrice}}</view>
+  <view class='pay-lable'>付款方式</view>
+  <view class='list'>
+    <view class='single-list' bindtap='chooseTap' data-index='1'>
+      <icon class='iconfont icon-yue'></icon>
+      <text>余额支付</text>
+      <icon  wx:if='{{isSelect}}' class='iconfont icon-selected'></icon>
+    </view>
+    <view class='single-list' bindtap='chooseTap' data-index='2'>
+      <icon class='iconfont icon-wxpay'></icon>
+      <text>微信支付</text>
+      <icon wx:if='{{!isSelect}}' class='iconfont icon-selected'></icon>
+    </view>
+  </view>
+  <button class='person-btn pay-btn' bindtap='pay'>确认付款</button>
+</view>
+<!-- 输入支付密码 -->
+<view class="modals modals-bottom-dialog" wx:if="{{showModal}}" catchtouchmove="ture">
+  <view class="modals-cancel" bindtap="hideModal"></view>
+  <view class="bottom-dialog-body bottom-pos" animation="{{animationData}}">
+    <view class='close' bindtap="hideModal">
+      <icon class='iconfont icon-close'></icon>
+    </view>
+    <view class='input'>
+      <view wx:for='{{password}}' class='input-box'>
+        <view wx:if='{{item.hasValue}}' class='dot'></view>
+      </view>
+    </view>
+    <view class='keyboard'>
+      <view wx:for='{{keyboard}}' class='key' data-value='{{item.value}}' bindtap='getPassword'>{{item.key}}</view>
+      <view class='key' bindtap='deletePassword'><icon class='iconfont icon-delete'></icon></view>
+    </view>
+  </view>
+</view>
+<!-- 输入支付密码 -->

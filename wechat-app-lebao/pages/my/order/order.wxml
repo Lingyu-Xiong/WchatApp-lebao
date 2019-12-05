@@ -1,0 +1,106 @@
+<!--pages/my/order/order.wxml-->
+<view class='content {{isIphone5?"content-i5":""}}' style='height:{{contentHeight}}px'>
+  <view class='select'>
+    <view class='order-select'>
+    <icon class='iconfont icon-search'></icon>
+      <input class='selinput' type='text' value='{{inputOrderSn}}' placeholder='查询订单' placeholder-class='place-holder' bindinput='inputSelect' bindconfirm='search'></input>
+      <icon wx:if='{{inputOrderSn.length>0}}' class='iconfont icon-close' bindtap='clearSelect'></icon>
+    </view>
+  </view>
+
+  <view class='blank'></view>
+  <view class='order-type'>
+    <view class='order-type-single {{orderType==1?"order-active":""}}' bindtap='switchType' data-type='1'>学校</view>
+    <view class='order-type-single {{orderType==0?"order-active":""}}' bindtap='switchType' data-type='0'>商家</view>
+  </view>
+  
+  <view class='tabbar'>
+    <view wx:for='{{tabbar}}' class="swiper-tab {{currentTab==index ? 'active' : ''}}" data-current="{{index}}" bindtap="switchNav">{{item.value}}
+    </view>
+  </view>
+
+  <scroll-view class='scroll' scroll-y>
+    <swiper current="{{currentTab}}" class="swiper-box" duration="300" bindchange="bindChange" style="width:100%;height:{{pageHeight}}px;min-height:100%">
+      <swiper-item>
+        <template is='order' data='{{list:allList}}'></template>
+      </swiper-item>
+      <swiper-item>
+        <template is='order' data='{{list:waitPayList}}'></template>
+      </swiper-item>
+      <swiper-item>
+        <template is='order' data='{{list:completedList}}'></template>
+      </swiper-item>
+      <swiper-item>
+        <template is='order' data='{{list:refundList}}'></template>
+      </swiper-item>
+    </swiper>
+  </scroll-view>
+</view>
+
+<template name='order'>
+  <view wx:if='{{list.length==0}}' class='no-data'>
+    <icon class='iconfont icon-notfound'></icon>
+    <view class='no-data-text'>这里空空如也 (￣へ￣) </view>
+  </view>
+  <view wx:else class='temp-list'>
+    <view wx:for='{{list}}' class='temp-one' data-order-sn='{{item.orderSn}}' data-orderid='{{item.id}}' bindtap='goToDetails'>
+      <view class='temp-banner'>
+        <view class='banner-img'>
+          <image wx:if='{{item.orderType==0}}' mode='aspectFill' src='../../../images/navbar/store-select.png'></image>
+          <image wx:else mode='aspectFill' src='../../../images/navbar/school-select.png'></image>
+        </view>
+        <view class='banner-name'>{{item.orgName}}</view>
+        <view class='banner-status'>{{item.statusText}}</view>
+      </view>
+      <view class='temp-content'>
+        <view class='temp-pic'>
+          <image mode='aspectFill' src='{{item.picUrl}}'></image>
+        </view>
+        <view class='temp-body'>
+          <view class='temp-text'>
+            <view class='message' wx:if='{{item.orderType==0}}'>
+              <text class='class-name'>下单时间</text>
+              <text class='order-sn'>{{item.addTime}}</text>
+            </view>
+             <view class='message' wx:else>
+              <text class='class-name'>{{item.objName}}</text>
+              <text class='order-sn'>{{item.addTime}}</text>
+            </view>
+            <view class='actual-price'>
+              ￥{{item.orderPrice}}
+            </view>
+          </view>
+          <view class='temp-event'>
+            <view wx:if='{{item.status==0}}' class='temp-btn first-import' catchtap='showModal' data-price='{{item.orderPrice}}' data-order-sn='{{item.orderSn}}'data-id='{{item.id}}'>支付</view>
+            <view wx:if='{{item.status==0}}' data-order-sn='{{item.orderSn}}' class='temp-btn' catchtap='cancel'>取消订单</view>
+            <view wx:if='{{item.status==1}}' class='temp-btn' catchtap='applyRefund' data-order-sn='{{item.orderSn}}'>申请退款</view>
+            <view wx:if='{{item.status==2}}' class='temp-btn didabled' catchtap='refundDetail' data-order-sn='{{item.orderSn}}' data-id='{{item.id}}'>退款中</view>
+            <!-- <view wx:if='{{item.status==2}}' class='temp-btn' catchtap='cancelRefund' data-brandId='{{item.brandId}}' data-order-sn='{{item.orderSn}}' data-id='{{item.id}}'>取消退款</view> -->
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+<!-- 输入支付密码 -->
+<view class="modals modals-bottom-dialog" wx:if="{{showModal}}" catchtouchmove="ture">
+  <view class="modals-cancel" bindtap="hideModal"></view>
+  <view class="bottom-dialog-body bottom-pos" animation="{{animationData}}">
+    <view class='close'>
+      <icon class='iconfont icon-close' bindtap='hideModal'></icon>
+    </view>
+    <view class='orderSn'>订单编号-{{orderSn}}</view>
+    <view class='money'>￥{{balancePrice}}</view>
+    <view class='input'>
+      <view wx:for='{{password}}' class='input-box'>
+        <view wx:if='{{item.hasValue}}' class='dot'></view>
+      </view>
+    </view>
+    <view class='keyboard'>
+      <view wx:for='{{keyboard}}' class='key' data-value='{{item.value}}' bindtap='getPassword'>{{item.key}}</view>
+      <view class='key' bindtap='deletePassword'>
+        <icon class='iconfont icon-delete'></icon>
+      </view>
+    </view>
+  </view>
+</view>

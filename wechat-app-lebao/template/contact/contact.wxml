@@ -1,0 +1,10 @@
+<!--template/contact/contact.wxml-->
+<template name='contact'>
+  <view class="right-bottom">
+    <button open-type='contact' class='chat'>
+      客服
+    </button>
+    <button class='chat' bindtap='goMiniprogram'>推手</button>
+    <button class='chat'  bindtap="goTop"><icon class='iconfont icon-xiangshang'></icon></button>
+  </view>
+</template>

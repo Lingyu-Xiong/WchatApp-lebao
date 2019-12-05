@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "提现明细",
+  "usingComponents": {
+    "Select": "/components/select/select"
+  }
+}

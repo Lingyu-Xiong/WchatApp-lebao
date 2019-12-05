@@ -1,0 +1,35 @@
+<view class='confirm-con'>
+  <view class='card'>
+    <view class='name'>{{examname}}</view>
+    <view class='tag'>
+    <view class='tag-info'>
+      <view class='price-lable'>考试时间：</view>
+      <view class='price-num nored'>待定</view>
+    </view>
+    <view class='tag-info'>
+      <view class='price-lable'>考试类型：</view>
+      <view class='price-num nored'>待定</view>
+    </view>
+    <view class='tag-info'>
+      <view class='price-lable'>费用：</view>
+      <view class='price-num'>¥{{price}}</view>
+    </view>
+    </view>
+    <image class='bg-img' src='../../../images/exam/bg-conexam.png'></image>
+  </view>
+  <view class='card stu-card' wx:if='{{name}}'>
+    <view class='name'>学员信息<icon class='iconfont icon-cha icon-del' bindtap='studelete'></icon></view>
+    <view class='tag'>
+    <view class='tag-info'>
+      <view class='price-lable'>学员姓名：</view>
+      <view class='price-num nored'>{{name}}</view>
+    </view>
+    <view class='tag-info'>
+      <view class='price-lable'>学员编号：</view>
+      <view class='price-num nored'>{{stuid}}</view>
+    </view>
+    </view>
+  </view>
+  <view class='addstu' bindtap='addstu' wx:if='{{addshow}}'><icon class='iconfont icon-tianjia add-icon'></icon>添加学员</view>
+  <view class='confirm-btn' bindtap='submit'>提交订单</view>
+</view>

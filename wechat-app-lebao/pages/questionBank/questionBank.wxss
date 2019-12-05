@@ -1,0 +1,80 @@
+/* pages/questionBank/questionBank.wxss */
+page{
+  height:100%;
+  background-color: #fff;
+}
+.questionBank{
+  width: 100%;
+}
+.banner-pic image{
+  width: 100%;
+  height: 200px;
+}
+.item-title{
+  font-weight: Regular;
+  color: #486768;
+  padding-left: 20px;
+}
+.scroll{
+   white-space: nowrap; 
+   display: flex;
+   padding-top:15px;
+}
+.item-card{
+  width: 40%;
+  height: 100px; 
+  display: inline-block;
+}
+.item-card image{
+  width: 100%;
+  height: 100px; 
+  display: inline-block;
+}
+.ranking{
+display: flex;
+flex-direction: row;
+}
+.ranking .ranking-left{
+  flex:2;
+  padding-left: 20px;   
+}
+.ranking .ranking-left image{
+  width:98%;
+  height:170px;
+  background:rgba(237,246,254,1);
+  border-radius:8px;
+}
+.ranking .ranking-right{
+  width:81px;
+  height:170px;
+  background:rgba(255,245,231,1);
+  border-radius:8px;
+  margin-right:20px;
+  color: #4D4D4D;
+  font-size: 14px;
+  font-weight: Regular;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.ranking-right .ic{
+  flex:1;
+}
+.ranking-right .ic image{
+  width:23px;
+  height:20px ;
+  padding-top:8px;
+}
+.button{
+  width:144px;
+  height:36px;
+  background:rgba(62,191,183,1);
+  box-shadow:0px 2px 5px 0px rgba(62,191,183,0.45);
+  border-radius:24px;
+  margin: 20px 116px;
+  text-align:center;
+  line-height:33px;
+  color:#fff;
+  font-size:16px
+}

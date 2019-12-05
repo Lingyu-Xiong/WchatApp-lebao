@@ -1,0 +1,5 @@
+{
+  "navigationBarTitleText": "学校列表",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50
+}

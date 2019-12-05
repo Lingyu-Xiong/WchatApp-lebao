@@ -1,0 +1,27 @@
+<!--pages/my/expert/expert.wxml-->
+<view class='expert-content'>
+  <view class='select'>
+    <view class='expert-select'>
+    <icon class='iconfont icon-search'></icon>
+      <input class='selinput' type='text' value='{{inputName}}' placeholder='查询专家' placeholder-class='place-holder'  bindinput='inputSelect' bindconfirm='search'></input>
+      <icon wx:if='{{inputName.length>0}}' class='iconfont icon-close' bindtap='clearSelect'></icon>
+    </view>
+  </view>
+  <view wx:if='{{expertList.length!=0}}'>
+      <view class='expert-single' wx:for='{{expertList}}' wx:key='*this' data-id='{{item.id}}'bindtap='goToExpertDetail'>
+        <image class='expert-item-pic' mode='scaleToFill' src='{{item.pictureUrl}}'></image>
+        <view class='text-content'>
+          <view class="expert-name">{{item.name}}</view>
+          <view class="expert-filed">擅长领域：{{item.field}}</view>
+          <view class="expert-introduction">简介：{{item.briefIntroduction}}</view>
+          <view class="expert-follow">浏览量:{{item.visitNum}}</view>
+        </view>
+      </view>
+  </view>
+  <view wx:else>
+        <view class='nodata {{isIphone5?"nodata-i5":""}}'>
+          <icon class='iconfont icon-expert'></icon>
+          <view class='nodata-text'>暂无专家</view>
+        </view>
+      </view> 
+</view>

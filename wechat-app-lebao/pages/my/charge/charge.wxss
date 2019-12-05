@@ -1,0 +1,29 @@
+/* pages/my/charge/charge.wxss */
+@import "../person.wxss";
+page{
+  background-color: #ffffff;
+}
+.banner {
+  display: inline-block;
+  text-align: center;
+  border: none;
+}
+
+.banner .details {
+  position: absolute;
+  top: 20px;
+  right: 5%;
+  color: #25aab1;
+  padding-right: 14px;
+}
+.icon-close{
+  font-size: 26px;
+  line-height: 64px;
+  color: #466466;
+  padding-right: 8px;
+  width: 30px;
+  text-align: right
+}
+.input-money{
+  width: calc(100% - 105px);
+}

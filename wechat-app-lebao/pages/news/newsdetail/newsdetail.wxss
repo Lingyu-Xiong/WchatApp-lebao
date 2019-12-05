@@ -1,0 +1,49 @@
+page{
+  background-color:#fff;
+}
+.news-con{
+  padding:10px;
+}
+.main-title{
+font-size:20px;
+color:#466466;
+font-weight: 700;
+line-height: 30px;
+}
+.tag{
+ font-size:14px;
+  color:#808080;
+  margin:20px 0;
+  display:flex;
+  flex-direction: row;
+}
+.time{
+ 
+}
+.count{
+margin-left:15px;
+}
+rich-text{
+  
+}
+.no-data {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top:180px;
+}
+
+.icon-no-record, .icon-Astronaut {
+  color: #466466;
+  font-size: 70px;
+  line-height: 90px;
+}
+
+.no-data-text {
+  color: #466466;
+  font-size: 16px;
+  line-height: 20px;
+}

@@ -1,0 +1,8 @@
+<!--pages/loading/loading.wxml-->
+<image class='cover' src='../../images/login/loginbg.png'></image>
+<view class='title'>乐宝科技</view>
+<view class='title-decsript'></view>
+<view class='progress-text'>Loading...</view>
+<view class='progress'>
+  <progress stroke-width='16' backgroundColor='transparent' active active-mode='forwards' border-radius='8' percent='{{value}}' activeColor='#ffffff'></progress>
+</view>

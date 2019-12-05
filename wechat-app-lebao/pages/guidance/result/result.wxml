@@ -1,0 +1,25 @@
+<view class='gui-result'>
+  <view class='exam-list' wx:if='{{resultList.length!=0}}'>
+    <view wx:for='{{resultList}}'>
+      <view class='exam-single gui-exam-single' bindtap=''>
+        <view class='script gui-script'>
+          <view class='exam-name'>科目：{{item.category}}</view>
+          <view class='exam-time'>
+            <icon class='iconfont icon-nocourse'></icon>测试日期: {{item.addTime}}</view>
+        </view>
+        <view class='gui-viewdetail' wx:if='{{item.checkStatus==1}}' catchtap='toresultDetail' data-id='{{item.id}}'>
+          查看结果
+        </view>
+        <view class='gui-viewdetail nofeed' wx:if='{{item.checkStatus==0}}'catchtap='showtips'>
+          未反馈
+        </view>
+        <view class='bg-circle-top'></view>
+        <view class='bg-circle-bottom'></view>
+      </view>
+    </view>
+  </view>
+  <view class='no-data' wx:if='{{resultList==0}}'>
+    <icon class='iconfont icon-notfound'></icon>
+    <view class='no-data-text'>暂无测试信息(￣へ￣) </view>
+  </view>
+</view>

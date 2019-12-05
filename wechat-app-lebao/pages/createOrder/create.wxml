@@ -1,0 +1,66 @@
+<!--pages/createOrder/create.wxml-->
+<view class='create-content'>
+  <view class='blank'></view>
+  <view class='body'>
+    <view class='bodycontent'>
+      <view class='body-content'>
+        <view class='course-name'>{{name}}</view>
+        <view class='blank'></view>
+      </view>
+      <view class='body-content'>
+        <view class='text'>下单时间：{{addTime}}</view>
+        <view class='text'>订单编号：{{orderSn}}</view>
+        <view class='text'>订单金额：￥{{orderPrice}}元</view>
+        <view class='blank'></view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='create-content'>
+  <view class='message desc'>
+    <view class='course-desc'>
+      <icon class='iconfont icon-pay div-icon'></icon> 支付信息
+    </view>
+    <view class='message'>支付金额（余额）
+      <text>￥{{orderPrice}}</text>
+    </view>
+  </view>
+  <view class='message desc'>
+    <view class='course-desc'>
+      <icon class='iconfont icon-discount div-icon'></icon> 优惠信息
+    </view>
+    <view class='message'>本次消费获得宝宝币
+      <text>{{orderPrice}}</text>
+    </view>
+  </view>
+</view>
+<view class='sign-up-blank'></view>
+<view class='sign-up'>
+  <view class='btn cancle' bindtap='cancle'>
+    取消
+  </view>
+  <view class='btn ensure' bindtap='showModal'>
+    确定
+  </view>
+</view>
+<!-- 输入支付密码 -->
+<view class="modals modals-bottom-dialog" wx:if="{{showModal}}" catchtouchmove="ture">
+  <view class="modals-cancel" bindtap="hideModal"></view>
+  <view class="bottom-dialog-body bottom-pos" animation="{{animationData}}">
+    <view class='close' bindtap="hideModal">
+      <icon class='iconfont icon-close'></icon>
+    </view>
+    <view class='orderSn'>订单编号-{{orderSn}}</view>
+    <view class='money'>￥{{orderPrice}}</view>
+    <view class='input'>
+      <view wx:for='{{password}}' class='input-box'>
+        <view wx:if='{{item.hasValue}}' class='dot'></view>
+      </view>
+    </view>
+    <view class='keyboard'>
+      <view wx:for='{{keyboard}}' class='key' data-value='{{item.value}}' bindtap='getPassword'>{{item.key}}</view>
+      <view class='key' bindtap='deletePassword'><icon class='iconfont icon-delete'></icon></view>
+    </view>
+  </view>
+</view>
+<!-- 输入支付密码 -->

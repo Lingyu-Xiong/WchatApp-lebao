@@ -1,0 +1,52 @@
+<!--pages/questionBank/rank/rank.wxml-->
+<view class="ranking">
+  <view class='header'>
+    <view class="line1"></view>
+    <view class="tabbar">
+        <view wx:for='{{tabbar}}' wx:key='*this' class="{{currentTab==index ? 'active' : ''}}" data-current="{{index}}"     bindtap="switchNav">{{item.value}}
+        </view>
+      </view>
+    <!--<view class='my'  wx:if='{{rankList.length!=0}}'>
+        <text>{{myRank}}</text>
+        <image type="userAvatarUrl" mode='aspectFit'  class='avator' src='{{myAvatar}}'></image>
+        <view type="userNickName" class="name">{{myName}}</view>
+        <open-data type="userAvatarUrl" class='avator'></open-data>
+        <open-data type="userNickName" class="name"></open-data>
+        <view class='times'>{{myTimes}}</view>
+        <view class='rate'>{{myRrightRate}}</view>
+      </view>-->
+  </view>
+  <scroll-view class='scroll' scroll-y>
+    <swiper current="{{currentTab}}" class="swiper-box" duration="300" bindchange="bindChange"  style="width:100%;height:{{pageHeight}}px;min-height:100%">
+      <swiper-item>
+        <template is='rank' data='{{list:rankList,myAvatar,myName,myRank,myRrightRate,myTimes,currentTab}}'></template>
+      </swiper-item>
+      <swiper-item>
+        <template is='rank' data='{{list:rankList,myAvatar,myName,myRank,myRrightRate,myTimes,currentTab}}'></template>
+      </swiper-item> 
+    </swiper>
+  </scroll-view>
+  
+</view>
+<template name='rank'>
+  <view wx:if='{{list.length==0}}' class='no-data'>
+    <icon class='iconfont icon-notfound'></icon>
+    <view class='no-data-text'>暂无排行 (￣へ￣) </view>
+  </view>
+  <view wx:else class='rank-list'>
+  <view class='rank-one rank-one-my' wx:if='{{myRank}}'> 
+      <text>{{myRank['rank']}}</text>
+        <view  class='img' ><image mode='aspectFit' src='{{myRank["avatar"]}}'></image></view>
+        <view class='userName font-my'>{{myRank['userName']}}</view>
+        <view class='userTimes font-my'wx:if='{{currentTab==1}}'>{{myRank['times']}}</view>
+        <view class='userRightRate font-my'wx:if='{{currentTab==0}}'>{{myRank['rightRate']}}</view>
+  </view>
+   <view class='rank-one'  wx:for='{{list}}'wx:key='*this'>
+        <text>{{item.rank}}</text>
+        <view  class='img' ><image mode='aspectFit' src='{{item.avatar}}'></image></view>
+        <view class='userName'>{{item.userName}}</view>
+        <view class='userTimes' wx:if='{{currentTab==1}}'>{{item.times}}</view>
+        <view class='userRightRate' wx:if='{{currentTab==0}}'>{{item.rightRate}}</view>
+      </view>
+  </view>
+</template>

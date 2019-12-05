@@ -1,0 +1,40 @@
+<!--pages/my/refund/details/details.wxml-->
+<view class='content'>
+  <view class='message1'>
+    <view class='course-desc'>
+      <icon class='iconfont icon-refund div-icon'></icon> 退款流程
+    </view>
+    <i-steps current="{{verticalCurrent}}" direction="vertical">
+      <i-step wx:for='{{stepList}}'>
+        <view slot="title">
+          {{item.title}}
+        </view>
+        <view slot="content">
+          <text>{{item.content}}</text>
+        </view>
+      </i-step>
+    </i-steps>
+  </view>
+  <view class='blank'></view>
+</view>
+
+<view class='content {{isIphone5?"content-i5":""}}'>
+  <view class='message desc'>
+    <view class='course-desc'>
+      <icon class='iconfont icon-refund div-icon'></icon> 退款信息
+    </view>
+    <view class='message' style='height:90px'>
+      <view class='mess-pic'>
+        <image mode='aspectFill' src='{{courseCover}}'></image>
+      </view>
+      <view class='mess-text'>
+        <text class='name'>{{orgName}}</text>
+        <text class='order-sn single'>订单编号：{{orderSn}}</text>
+      </view>
+    </view>
+    <view class='message'>申请时间：{{applyTime}}</view>
+    <view class='message single'>退款编号：{{refundSn}}</view>
+  </view>
+  <view class='blank'></view>
+  <button class='ensureRefund' bindtap='cancelRefund'>取消退款</button>
+</view>

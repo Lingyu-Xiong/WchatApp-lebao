@@ -1,0 +1,29 @@
+<!--pages/my/withdrawal/list/list.wxml-->
+<import src='../../../../template/detail/detail.wxml' />
+<view class='content {{isIphone5?"content-i5":""}}' style='height:{{contentHeight}}px'>
+  <view class='blank'></view>
+  <view class='tabbar-detail'>
+    <Select class='select-time' height='24' prop-array='{{selectArray}}' now-text='全部时间' has-img='{{hasImg}}' bind:getbank='getTime'></Select>
+    <view class='total'>总金额：￥{{total}}</view>
+  </view>
+  <scroll-view scroll-y class='body'>
+    <view wx:if='{{detailList.length==0}}' class='no-data'>
+      <icon class='iconfont icon-no-record'></icon>
+      <view class='no-data-text'>这里空空如也 (￣へ￣) </view>
+    </view>
+    <view wx:else class='temp-list'>
+      <view wx:for='{{detailList}}' class='temp-one' data-sn='{{item.id}}' bindtap='goToDetails'>
+        <view class='temp-src'>
+          <image mode='aspectFill' src='{{item.picSrc}}'></image>
+        </view>
+        <view class='temp-left'>
+          <text class='temp-name'>{{item.name}}</text>
+          <text class='temp-time'>{{item.time}}</text>
+        </view>
+        <view class='temp-right'>
+          ￥{{item.money}}
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

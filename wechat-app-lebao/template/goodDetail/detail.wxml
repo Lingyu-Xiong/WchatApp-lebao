@@ -1,0 +1,18 @@
+<!--template/detail/detail.wxml-->
+<template name='record'>
+  <view wx:if='{{list.length==0}}' class='no-data'>
+    <icon class='iconfont icon-no-record'></icon>
+    <view class='no-data-text'>这里空空如也 (￣へ￣) </view>
+  </view>
+  <view wx:else class='temp-list'>
+    <view wx:for='{{list}}' class='temp-one'>
+      <view class='temp-left'>
+        <text class='temp-name'>{{item.name}}</text>
+        <text class='temp-time'>{{item.time}}</text>
+      </view>
+      <view class='temp-right'>
+        {{item.money}}
+      </view>
+    </view>
+  </view>
+</template>

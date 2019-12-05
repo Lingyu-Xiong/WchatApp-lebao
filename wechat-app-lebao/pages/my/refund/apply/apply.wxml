@@ -1,0 +1,35 @@
+<!--pages/my/refund/apply/apply.wxml-->
+<view class='content {{isIphone5?"content-i5":""}}'>
+  <view class='blank'></view>
+  <view class='status'>{{statusText}}</view>
+  <view class='part'>
+    <view class='pic'>
+      <image mode='aspectFill' src='{{courseCover}}'></image>
+    </view>
+    <view class='goods'>
+      <text class='name'>{{orgName}}</text>
+      <text>订单编号：{{sn}}</text>
+      <text>下单时间：{{addTime}}</text>
+    </view>
+  </view>
+  <view class='orderprice'>￥{{price}}</view>
+  <view class='blank'></view>
+</view>
+<view class='content {{isIphone5?"content-i5":""}}'>
+  <view class='message desc'>
+    <view class='course-desc'>
+      <icon class='iconfont icon-refund div-icon'></icon> 退款原因
+    </view>
+    <view class='message'>
+      <textarea type='text' maxlength='200' placeholder='请输入退款原因' class='input-reason' placeholder-style='place-holder' value='{{reason}}' bindinput='inputReason'></textarea>
+    </view>
+  </view>
+  <view class='message desc'>
+    <view class='course-desc'>
+      <icon class='iconfont icon-pay div-icon'></icon> 退款信息
+    </view>
+    <view class='message'>退款金额：{{price}}</view>
+    <button class='ensureRefund' bindtap='ensureRefund'>提交</button>
+  </view>
+  <view class='blank'></view>
+</view>

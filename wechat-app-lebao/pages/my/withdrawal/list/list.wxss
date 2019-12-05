@@ -1,0 +1,107 @@
+/* pages/my/withdrawal/list/list.wxss */
+@import '/template/detail/detail.wxss';
+.content {
+  width: 100%;
+  background-color: #fff;
+}
+
+.content-i5 {
+  margin-top: 0;
+}
+.blank{
+  width: 100%;
+  height: 16px;
+}
+.tabbar-detail {
+  margin-top: 16px;
+  width: 100%;
+  height: 24px;
+  margin-bottom: 12px;
+}
+
+.select-time {
+  width: 35%;
+  height: 100%;
+  float: left;
+  margin-left: 5%;
+}
+
+.total {
+  width: 50%;
+  height: 100%;
+  text-align: right;
+  padding-right: 16px;
+  color: #466466;
+  font-size: 14px;
+  line-height: 24px;
+  float: right;
+}
+.body{
+  width: 100%;
+  height: calc(100% - 110px);
+}
+.no-data{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.icon-no-record{
+  color: #466466;
+  font-size: 70px;
+  line-height: 90px;
+}
+.no-data-text{
+  color: #466466;
+  font-size: 16px;
+  line-height: 20px;
+}
+.temp-one{
+  width: 90%;
+  height: 50px;
+  margin-left: 5%;
+  margin-top: 8px;
+  border: 0.5px #e9e9e9 solid;
+  border-radius: 10rpx;
+}
+.temp-src{
+  width: 15%;
+  height: 100%;
+  float: left;
+}
+.temp-src image{
+  width: 50%;
+  height: 50%;
+  margin-top: 25%;
+  margin-left: 30%;
+}
+.temp-left{
+  width: calc(55% - 8px);
+  height: 100%;
+  float: left;
+  color: #466466;
+  padding-left: 8px;
+}
+.temp-left text{
+  display: block;
+}
+.temp-name{
+  font-size: 14px;
+  line-height: 30px;
+}
+.temp-time{
+  font-size: 10px;
+  line-height: 20px;
+}
+.temp-right{
+  width: calc(30% - 8px);
+  height: 100%;
+  float: right;
+  color: #466466;
+  padding-right: 8px;
+  font-size: 16px;
+  line-height: 50px;
+  text-align: right;
+}

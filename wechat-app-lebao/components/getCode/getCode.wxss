@@ -1,0 +1,84 @@
+/* components/getCode/getCode.wxss */
+
+.btn {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  line-height: 40px;
+}
+
+.border {
+  border: 1rpx #fff solid;
+}
+
+.code-input {
+  width: calc(60% - 17px);
+  float: left;
+  color: #fff;
+  padding-left: 12px;
+  font-size: 13px;
+  line-height: 40px;
+  height: 40px;
+}
+
+.codeinput {
+  width: calc(60% - 17px);
+  padding-left: 14px;
+}
+
+.codeinput-i5 {
+  width: calc(58% - 40px);
+  padding-left: 14px;
+}
+
+.ffffff {
+  color: #fff;
+  font-size: 13px;
+  line-height: 40px;
+}
+
+.e9e9e9 {
+  color: #e9e9e9;
+  font-size: 13px;
+  line-height: 40px;
+}
+
+.codeBtn {
+  width: calc(40% - 17px);
+  height: 100%;
+  font-size: 12px;
+  background: transparent;
+  margin-right: 0;
+  padding: 0 5px;
+  color: #fff;
+  float: right;
+  border: none;
+  line-height: 40px;
+}
+
+.code-btn {
+  padding: 0;
+  width: calc(40% - 17px);
+}
+
+.code-btn-i5 {
+  padding: 0;
+  width: calc(42% - 12px);
+}
+
+.codeBtn::after {
+  border: none;
+}
+
+.line {
+  margin: 0 8px;
+  width: 1px;
+  background-color: #fff;
+  height: 12px;
+  float: left;
+  margin-top: 14px;
+}
+
+.code-line {
+  background-color: #466466;
+}

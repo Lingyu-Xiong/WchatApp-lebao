@@ -1,0 +1,126 @@
+/* pages/createOrder/create.wxss */
+@import '../school/details/details.wxss';
+@import '/css/modal.wxss';
+.content:last-child {
+  margin-bottom: 20px;
+}
+
+.content-i5:last-child {
+  margin-bottom: 12px;
+}
+
+.course-name {
+  font-size: 22px;
+  font-weight: bold;
+  color: #466466;
+  margin-top: 8px;
+}
+
+.body-content .text {
+  line-height: 24px;
+}
+
+
+
+.icon-phone {
+  font-size: 15px;
+  line-height: 18px;
+  color: #25aab1;
+  position: relative;
+  margin-top: -10px;
+}
+
+.dive {
+  width: calc(100% - 32px);
+  margin-left: 16px;
+}
+
+.div text {
+  display: block;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.div-icon {
+  color: #466466;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.course-desc {
+  font-size: 16px;
+  color: #466466;
+  line-height: 20px;
+  padding-bottom: 8px;
+}
+
+.teacher-pic {
+  width: 80%;
+  height: 150px;
+  margin-top: 12px;
+  margin-left: 10%;
+  border: 0.5px #e9e9e9 solid;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.teacher-pic-i5 {
+  height: 120px;
+}
+
+.teacher-pic image {
+  width: 25%;
+  height: 60%;
+}
+
+.sign-up-blank {
+  width: 100%;
+  height: 80px;
+}
+
+.sign-up {
+  width: 90%;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #fff;
+  position: fixed;
+  bottom: 20px;
+  left: 5%;
+  box-shadow:2px 2px 4px rgba(131, 131, 131, 0.2);
+}
+
+.btn {
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  line-height: 40px;
+  text-align: center;
+  width: 50%;
+  height: 100%;
+}
+
+.cancle {
+  float: left;
+  color: #25aab1;
+}
+
+.ensure {
+  float: right;
+  color: #fff;
+  background-color: #25aab1;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.message {
+  width: calc(100% - 32px);
+  margin-left: 16px;
+}
+
+.message text {
+  width: 50%;
+  display: inline-block;
+  text-align: right;
+}

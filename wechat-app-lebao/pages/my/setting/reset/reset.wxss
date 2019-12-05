@@ -1,0 +1,40 @@
+/* pages/my/setting/reset/reset.wxss */
+@import "../../person.wxss";
+@import "../setting.wxss";
+page{
+  background-color: #ffffff;
+}
+.blank {
+  height: 35px;
+}
+.form{
+  margin-top: 35px;
+}
+.content-i5 {
+  width: 88%;
+  margin: 35px 6%;
+}
+
+.tip {
+  width: 100%;
+  padding: 8px;
+  font-size: 10px;
+  text-align: center;
+  line-height: 20px;
+  margin-top: 10px;
+}
+.icon-close{
+  font-size: 20px;
+  line-height: 40px;
+  color: #466466;
+  padding-right: 8px;
+  width: 20px;
+  float: right;
+}
+.input-i5{
+  width: calc(70% - 48px);
+}
+.input{
+  width: calc(72% - 48px);
+  float: left;
+}

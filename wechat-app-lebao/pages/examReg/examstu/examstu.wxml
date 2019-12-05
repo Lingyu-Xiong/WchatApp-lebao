@@ -1,0 +1,33 @@
+<!--pages/examReg/examstu/examstu.wxml-->
+<view class='exam-content'>
+  <view class='exam-list'>
+    <view class='exam-single' wx:for='{{stuList}}' data-id='{{item.id}}' bindtap=''>
+      <view class='script stu-script'>
+        <view class='tag'>
+          <view class='tag-info'>
+            <view class='price-lable'>学员姓名：</view>
+            <view class='price-num nored'>{{item.name}}</view>
+          </view>
+          <view class='tag-info'>
+            <view class='price-lable'>学员编号：</view>
+            <view class='price-num nored'>{{item.id}}</view>
+          </view>
+          <view class='tag-info'>
+            <view class='price-lable'>电话号码：</view>
+            <view class='price-num nored'>{{item.mobile}}</view>
+          </view>
+        </view>
+      </view>
+      <view class='viewdetail'>
+        <image src="{{item.isSelect?'../../../images/is-select.png':'../../../images/no-select.png'}}" class="multi-img" data-index="{{index}}" bindtap="chooseTap" />
+      </view>
+    </view>
+    <view class='examstuadd'><icon class='iconfont icon-add icon-examstuadd' bindtap='addstu'></icon></view>
+    <view class='blankexamstu'></view>
+  </view>
+  <view wx:if='{{stuList.length==0}}' class='no-data'>
+    <icon class='iconfont icon-notfound'></icon>
+    <view class='no-data-text'>暂无学员信息</view>
+  </view>
+  <view wx:if='{{stuList.length!=0}}'  class='confirm-btn' bindtap='confirmstu'>确定</view>
+</view>

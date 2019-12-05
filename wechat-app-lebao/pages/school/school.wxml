@@ -1,0 +1,71 @@
+<!--pages/school/school.wxml
+<import src='../../template/contact/contact.wxml' />
+<template is='contact' data='{{scrollTop}}'></template>
+<import src='../../template/menu/menu.wxml'/>
+
+<template is='menu' data='{{navbarList,hotPic,contentHeight,schoolList,isIphone5:isIphone5,currentType,text:"热门学校",counterPri:"schoolDetails"}}'>
+</template>-->
+<view class='content' >
+ <view class='header'>
+    <view class='courseselect'>
+      <view class='course-select'>
+        <icon class='iconfont icon-search'></icon>
+        <input class='selinput' type='text' value='{{inputValue}}' placeholder='搜索你喜欢的...' placeholder-class='place-holder' bindinput='inputSelect' bindconfirm='search'></input>
+        <icon wx:if='{{inputValue.length>0}}'  class='iconfont icon-close' bindtap='clearSelect'></icon>
+      </view>
+    </view>
+    <view class='nav'>
+      <view class='search' bindtap='selectCategory'>
+       <!-- <view class='search-img1'> <image mode='scaleToFill' src='{{navicon1}}'></image></view>-->
+        <view class="{{hasSelect1?'search-title select':'search-title'}}">{{navText}}</view>
+        <!--<view class='search-img2'> <image mode='scaleToFill' src='{{navicon4}}'></image></view>-->
+      </view>
+       <view class='search'>
+       <!-- <view class='search-img1'> <image mode='scaleToFill' src='{{navicon2}}'></image></view>-->
+        <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{area}}"  class="{{hasSelect2?'search-title select':'search-title'}}">学校区域</picker>
+      <!--  <view class='search-img2'> <image mode='scaleToFill' src='{{navicon4}}'></image></view>-->
+    </view>
+       <view class='search' wx:if='{{city}}'>
+        <view class='search-img1'> <image mode='scaleToFill' src='{{navicon2}}'></image></view>
+        <view class="{{hasSelect3?'search-title select':'search-title'}}">{{city}}</view>
+        <!--<view class='search-img2'> <image mode='scaleToFill' src='{{navicon4}}'></image></view>-->
+      </view>
+    </view>
+   
+        <view class='line'></view>
+  </view>
+  <!--课程列表-->
+  <view class='main'>
+  <scroll-view class='main-scroll' scroll-y style="height: 100%" bindscrolltolower="searchScrollLower">
+  <view class='school-list' wx:if='{{schoolList.length!==0}}' >
+     <view class='school-single' wx:for='{{schoolList}}' data-id='{{item.id}}' bindtap='goToDetail'>
+        <view class='school-left'>
+          <image mode='scaleToFill' src='{{item.logoUrl}}'></image>
+        </view>      
+        <view class='school-right'>
+          <view class='school-name'>{{item.name}}</view>
+          <view class='school-other-label'><view class='school-other'>类别：<p>{{item.type}}</p></view><image mode='aspectFit' class='group-label' wx:if='{{item.grouponNum}}' src='../../images/groupon.png'></image></view>  
+          <view class='school-other'>地址：{{item.address}}</view>  
+        </view>
+     </view>
+
+  </view>
+  <view wx:else class='no-data'>
+    <icon class='iconfont icon-notfound'></icon>
+    <view class='no-data-text'>暂无学校 (￣へ￣) </view>
+  </view>
+  <view class="loading" hidden="{{!searchLoading}}">正在载入更多...</view>  
+  <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view> 
+   <!--课程列表 end-->
+  </scroll-view>
+</view>
+<view class='mask' wx:if="{{maskShow}}"  bindtap='clearMask'></view>
+ <scroll-view scroll-y="true" class='category-List' wx:if="{{maskShow}}">
+        <view class="{{item.type==touchId&&touch?'category-single touch':'category-single'}}" wx:for='{{navbarList}}' wx:key='*this' data-type='{{item.type}}' data-current="{{index}}"  bindtap='switchNav' bindtouchstart="mytouchstart" bindlongtap="mylongtap" 
+    bindtouchend="mytouchend">
+        {{item.name}}
+        </view>    
+    </scroll-view >
+
+
+</view>

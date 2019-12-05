@@ -1,0 +1,4 @@
+@import'../../confirmOrder/confirmOrder.wxss';
+.gb-stu-card{
+  margin:10px; 
+}

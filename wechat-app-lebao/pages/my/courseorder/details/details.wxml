@@ -1,0 +1,28 @@
+<!--pages/my/order/details/details.wxml-->
+<view class='content {{isIphone5?"content-i5":""}} desc'>
+  <view class='blank'></view>
+  <view class='title'>
+    <view class='status'>{{statusText}}</view>
+  </view>
+  
+   <view class='imgsrc'>
+        <image mode='scaleToFill' class='img' src='{{courseCover}}'></image>
+      </view>
+  <view class='blank'></view>
+</view>
+<view class='content {{isIphone5?"content-i5":""}}'>
+  <view class='message desc'>
+    <view class='course-desc'>
+      <icon class='iconfont icon-pay div-icon'></icon> 支付详情
+    </view>
+    <view class='message single'>订单编号：{{orderSn}}</view>
+    <view class='message single'>下单时间：{{addTime}}</view>
+    <view class='message single'>支付金额：{{price}}</view>
+  </view>
+  
+  <view class='order-event'>
+    <view wx:if='{{status==0}}' class='order-btn first-import' data-order-sn='{{orderSn}}' catchtap='goToPay'   data-price='{{price}}'>支付</view>
+    <view wx:if='{{status==0}}' data-order-sn='{{orderSn}}' class='order-btn' catchtap='cancel'>取消订单</view>
+  </view>
+  <view class='blank'></view>
+</view>

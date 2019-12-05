@@ -1,0 +1,26 @@
+<!--pages/my/setting/personinfo/personinfo.wxml-->
+<view class='detail-content'>
+  <view class='detail-list'>
+    <text>真实姓名</text>
+    <view class='detail-list-right'>
+      <input type='text' placeholder='{{name_placeholder}}' bindinput='getname'></input>
+    </view>
+  </view>
+  <view class='detail-list'>
+    <text>生日</text>
+    <view class='detail-list-right'>
+      <picker mode="date" value="{{date}}" start="1900-09-01" end="2019-09-01" bindchange="bindDateChange">
+        <view class="picker">
+          {{birthday}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class='detail-list'>
+    <text>备注</text>
+    <view class='detail-list-right'>
+      <input type='text' placeholder='{{remark_placeholder}}' bindinput='getremark'></input>
+    </view>
+  </view>
+</view>
+<view class='add-confirm' bindtap='adddetailcon'>保存</view>

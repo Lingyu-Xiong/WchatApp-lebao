@@ -1,0 +1,13 @@
+@import'../../../video/videodetail/videodetail.wxss';
+.video-title{
+  justify-content: space-between
+}
+.myvideo-update-time{
+  color:#466466;
+  font-size:16px;
+}
+.feedback{
+  font-size: 15px;
+  color:#808080;
+  margin-bottom: 5px;
+}

@@ -1,0 +1,21 @@
+<!--pages/my/setting/help/help.wxml-->
+<!--
+<view class='search'>
+  <icon class='iconfont icon-search'></icon>
+  <input class='search-input' value='{{search}}' type='text' bindfocus='search'></input>
+</view>
+-->
+<view class='block one'>
+  <!--<view class='banner'>
+    <icon class='iconfont icon-back' bindtap='back'></icon>
+    <text>帮助中心</text>
+  </view> -->
+  <view class='content {{isIphone5?"content-i5":""}}'>
+    <view class='question-list'>
+      <view wx:for='{{infroList}}' class='single-list'>
+        <view class='text' bindtap='toggleBtn' id="{{item.id}}">{{item.question}}</view>
+        <view class='text text-answer {{uhide==item.id?"":"hidden"}}'>{{item.answer}}</view>
+      </view>
+    </view>
+  </view>
+</view>

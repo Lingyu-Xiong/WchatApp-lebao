@@ -1,0 +1,170 @@
+/* template/menu/menu.wxss */
+
+.search {
+  height: 30px;
+  /* width: 90%;
+  margin-left: 5%; */
+  margin-top: 10px;
+  border-radius: 10px;
+  background: #fbfafa;
+  box-shadow: 2px 2px 4px rgba(131, 131, 131, 0.2);
+}
+
+.icon-search {
+  padding-left: 20px;
+  padding-right: 10px;
+  line-height: 30px;
+  color: #466466;
+  font-size: 18px;
+}
+
+.search-input {
+  width: calc(100% - 50px);
+  height: 100%;
+  background: transparent;
+  color: #466466;
+  font-size: 14px;
+  float: right;
+}
+
+.content {
+  width: 100%;
+  background-color: #fff;
+  margin-top: 10px;
+}
+
+.content-i5 {
+  margin-top: 12px;
+}
+
+.navbar-list {
+  width: 70px;
+  height: 100%;
+  float: left;
+  /*border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;*/
+  background-color: #f9f9f9;
+}
+
+.navbar {
+  height: 40px;
+  width: 100%;
+  color: #466466;
+  text-align: center;
+  line-height: 40px;
+  border-style: none none solid none;
+  border-width: 0.5px;
+  border-color: #fff;
+  font-size: 14px;
+  border-left:4px solid #f9f9f9;
+}
+
+.navbar:first-child {
+ /* border-top-left-radius: 10px;*/
+}
+
+.active {
+  background-color: #fff;
+  color: #25aab1;
+  border-left:4px solid ;
+  /*border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;*/
+}
+
+.school-list {
+  width: calc(100% - 70px);
+  height: 100%;
+  float: right;
+}
+
+.hot-school {
+  width: 100%;
+  height: 120px;
+  text-align: center;
+  color: #466466;
+  font-size: 12px;
+}
+swiper{
+  height:100px
+}
+
+.hot-school text {
+  display: block;
+  margin-top: 6px;
+}
+
+.hot-pic {
+  width: 95%;
+  height: 100%;
+  /*border-radius: 10px;*/
+}
+
+.schoollist {
+  width: 100%;
+  height: calc(100% - 40px);
+  margin-top: 20px;
+}
+
+.schoollist-i5 {
+  margin-top: 10px;
+  height: calc(100% - 20px);
+}
+
+.school {
+  width: 50%;
+  height: 80px;
+  text-align: center;
+  color: #466466;
+  float: left;
+  margin-top: 18px;
+}
+
+.school-i5 {
+  height: 70px;
+}
+
+.school text {
+  display: block;
+}
+
+.school-pic {
+  width: 95%;
+  height: 80%;
+  /*border-radius: 10px;*/
+}
+
+.school-name {
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.school-place {
+  font-size: 9px;
+  margin-top: 4px;
+}
+.nodata {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.nodata-i5 {
+  height: 150px;
+}
+
+.icon-school {
+  font-size: 30px;
+  color: #466466;
+}
+
+.nodata-text {
+  color: #466466;
+  font-size: 14px;
+  line-height: 18px;
+}

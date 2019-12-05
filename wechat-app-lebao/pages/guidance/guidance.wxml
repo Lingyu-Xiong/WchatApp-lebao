@@ -1,0 +1,20 @@
+<view class='guidance'>
+  <image class='banner-pic' mode='scaleToFill' src='{{bannerUrl}}'></image>
+  <view class='gui-label'>请选择您感兴趣的科目：</view>
+  <view class='item-list'>
+    <view class='function' wx:for='{{categoryList}}' data-id='{{item.id}}' bindtap='chooseitem'>
+      <image class='item-pic {{currentId==item.id?"item-pic-select":""}}' mode='aspectFit' src='{{item.src}}'></image>
+      <text class='item-text {{currentId==item.id?"item-text-select":""}}'>{{item.text}}</text>
+    </view>
+  </view>
+  <view class='bottom-button'>
+    <view class="begin">
+      <view class='begin-btn' bindtap='totest'>
+        开始测试
+      </view>
+    </view>
+    <view class="result" bindtap='toResult'>
+      测试结果查看
+    </view>
+  </view>
+</view>

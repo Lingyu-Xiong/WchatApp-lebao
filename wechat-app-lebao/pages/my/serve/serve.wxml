@@ -1,0 +1,35 @@
+<!--pages/my/serve/serve.wxml-->
+<view class='vol-con'>
+  <view class='select'>
+    <view class='serve-select'>
+      <icon class='iconfont icon-search'></icon>
+      <input class='selinput' type='text' value='{{inputschName}}' placeholder='查询活动' placeholder-class='place-holder' bindinput='inputSelect' bindconfirm='search'></input>
+      <icon wx:if='{{inputschName.length>0}}' class='iconfont icon-close' bindtap='clearSelect'></icon>
+    </view>
+  </view>
+
+  <view class="vol-rec" bindtap='volRec'>
+    打卡记录
+    <icon class='iconfont icon-shouzhi div-icon'></icon>
+  </view>
+  <button wx:if="{{!hasLocation}}" open-type="openSetting" bindopensetting="callback">打开设置页授权位置信息</button>
+
+  <view wx:if='{{volList.length==0}}' class='no-data'>
+    <icon class='iconfont icon-notfound'></icon>
+    <view class='no-data-text'>附近50km内暂无志愿活动 (￣へ￣) </view>
+  </view>
+  <view class="vol-list">
+    <view class="single-list" wx:for='{{volList}}'>
+      <view class='list-left'>
+        <view class='title'>
+          {{item.schoolName}}
+        </view>
+        <view class="schoolname">{{item.clockAddress}}</view>
+      </view>
+      <view class='list-right'>
+        <text>距离:{{item.distance}}m</text>
+        <view class='sign-btn' bindtap='sign' data-id='{{item.id}}'>打卡</view>
+      </view>
+    </view>
+  </view>
+</view>

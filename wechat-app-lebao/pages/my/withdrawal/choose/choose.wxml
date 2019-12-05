@@ -1,0 +1,23 @@
+<!--pages/my/withdrawal/choose/choose.wxml-->
+<view class='content' style='heught:{{contentHeight}}px'>
+  <view class='description'>已关联
+    <view class='addcard' bindtap='add'>添加
+      <icon class='iconfont icon-add'></icon>
+    </view>
+  </view>
+  <view wx:if='{{cardList.length==0}}' class='no-data'>
+      <icon class='iconfont icon-notfound'></icon>
+      <view class='no-data-text'>
+        <text>您还没有关联银行卡\n\n请点击添加进行关联</text>
+      </view>
+    </view>
+  <view wx:else class='list'>
+    <view wx:for='{{cardList}}' class='single-list' data-index='{{index}}' bindtap='chooseBank'>
+      <image class='listpic' mode='aspectFit' src='{{item.pic}}'></image>
+      <text>{{item.name}}( {{item.abbr}} )</text>
+      <icon wx:if='{{item.isSelected}}' class='iconfont icon-selected'></icon>
+    </view>
+  </view>
+  <button class='person-btn' bindtap='ensureBank'>确认</button>
+  <view class='blank'></view>
+</view>

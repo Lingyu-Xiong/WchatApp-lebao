@@ -1,0 +1,14 @@
+/* pages/videoCourse/video/video.wxss */
+.page{
+  background-color: #fff;
+}
+.video{
+  width: 100%;
+  height: 225px;
+}
+.intro{
+  padding: 20px;
+}
+.rich-text{
+  padding: 20px;
+}

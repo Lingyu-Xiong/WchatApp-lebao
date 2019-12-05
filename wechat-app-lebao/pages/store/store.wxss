@@ -1,0 +1,19 @@
+/* pages/store/store.wxss */
+@import "../../template/menu/menu.wxss";
+page{
+  background-color: #FFFFFF;
+}
+.text{
+  text-align:center;
+  color:#466466;
+  font-size:20px;
+  margin-bottom:10px;
+}
+.text1{
+  margin-top:100px;
+}
+.store-pic{
+  margin-top:30px;
+  width:100%;
+  height:200px;
+}

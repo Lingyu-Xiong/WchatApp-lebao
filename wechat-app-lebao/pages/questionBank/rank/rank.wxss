@@ -1,0 +1,109 @@
+/* pages/questionBank/rank/rank.wxss */
+page{
+  height:100%;
+  background-color: #fff;
+}
+.ranking{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.header{
+  line-height: 100rpx;
+  flex: 0 0 60px; /* 不放大不缩小固定100rpx */
+}
+.line1{
+  width:100%;
+  height:10px;
+  background:rgba(246,246,246,1); 
+  position:fixed;
+  top:0;
+}
+.tabbar{
+  width: 100%;
+  height: 50px;
+  top:10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+  position:fixed;
+  color: #8A8A8A;
+}
+.active {
+  background-color: #fff;
+  color: #0F2E48;
+  border-style: none none solid none;
+  border-width: 2px;
+  border-color: #0F2E48;
+}
+.my{
+  width:100%;
+  height:110px;
+  background:#3EBFB7;
+  color:#fff;
+  display:flex;
+  justify-content:space-around;
+  position:fixed;
+  top:60px;
+  align-items:center;
+}
+.avator {
+  width: 70px;
+  height: 70px;
+  overflow: hidden;
+  border-radius: 50%;
+  border:4px solid #fff;
+}
+.scroll {
+  width: 100%;
+  height: calc(100% - 165px);
+  position: relative;
+  overflow: auto;
+  flex: 1;
+}
+.rank-list{
+  position: relative;
+}
+.rank-one-my{
+  background: #3EBFB7;
+}
+.font-my{
+  color: #fff;
+}
+.rank-one{
+  width:100%;
+  height:90px;
+  color:#567688;
+  border-top: 1px dashed #F5F5F5;
+  display:flex;
+  justify-content:space-around;
+  position:relative;
+  align-items:center;
+}
+.rank-one text{
+  width:40px;
+  padding-left:10px;
+
+}
+.img{
+  width:70px;
+}
+.img image{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border:4px solid #fff;
+
+}
+.userName{
+  width:110px;
+}
+.userTimes{
+  width:50px;
+}
+.userRightRate{
+  width:100px;
+}
+

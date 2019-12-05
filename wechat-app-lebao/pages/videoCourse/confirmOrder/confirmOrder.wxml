@@ -1,0 +1,34 @@
+<!--pages/confirmOrder/confirmOrder.wxml-->
+<view class='create-content'>
+    <view class='bodycontent'>
+        <view class='course-name'>{{courseinfo["courseName"]}}</view>
+        <view class='message desc'>￥{{courseinfo['orderPrice']}}元</view>
+    </view>
+    <view class='imgsrc'>
+    <image mode='scaleToFill' class='img' src='{{courseinfo["courseCover"]}}'></image>
+  </view>
+</view>
+
+<view class='create-content'>
+  <view class='message desc'>
+    <view class='course-desc'>
+      <icon class='iconfont icon-discount div-icon'></icon> 优惠信息
+    </view>
+    <view class='message'>
+      <view class='text1'> 本次消费获得宝宝币</view>
+      <view class='text2'>{{courseinfo['orderPrice']}}</view>
+    </view>
+  </view>
+</view>
+<!-- <view class='sign-up-blank'></view> -->
+
+<view class='sign-up'>
+  <view class='left'>
+    <view class='total'>总额：
+      <text>￥{{courseinfo['orderPrice']}}</text>
+    </view>
+  </view>
+  <view class='right' bindtap='signUp'>
+    提交订单
+  </view>
+</view>

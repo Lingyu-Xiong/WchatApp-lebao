@@ -1,0 +1,34 @@
+<!--pages/my/balance/balance.wxml-->
+<import src='../../../template/detail/detail.wxml' />
+<view class='content {{isIphone5?"content-i5":""}}' style='height:{{contentHeight}}px'>
+  <view class='top-total'>￥{{total}}</view>
+  <view class='tabbar {{isIphone5?"tabber-i5":""}}'>
+    <view wx:for='{{tabbar}}' class="swiper-tab {{currentTab==index ? 'active' : ''}}" data-current="{{index}}" bindtap="switchNav">{{item.value}}
+    </view>
+  </view>
+  <!--
+  <view class='tabbar-detail'>
+    <Select class='select-time' height='24' prop-array='{{selectArray}}' now-text='全部时间' has-img='{{hasImg}}' bind:getbank='getTime'></Select>
+    <view class='total'>总金额：￥{{total}}</view>
+  </view>
+  -->
+  <scroll-view class='scroll' scroll-y>
+    <swiper current="{{currentTab}}" class="swiper-box" duration="300" bindchange="bindChange" style="width:100%;height:{{pageHeight}}px;min-height:100%">
+      <swiper-item>
+        <template is='record' data='{{list:allList}}'></template>
+      </swiper-item>
+      <swiper-item>
+        <template is='record' data='{{list:chargeList}}'></template>
+      </swiper-item>
+      <swiper-item>
+        <template is='record' data='{{list:withdrawList}}'></template>
+      </swiper-item>
+      <swiper-item>
+        <template is='record' data='{{list:customList}}'></template>
+      </swiper-item>
+      <swiper-item>
+        <template is='record' data='{{list:refundList}}'></template>
+      </swiper-item>
+    </swiper>
+  </scroll-view>
+</view>

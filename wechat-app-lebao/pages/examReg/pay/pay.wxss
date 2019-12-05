@@ -1,0 +1,30 @@
+@import'../../my/charge/charge.wxss';
+@import '/css/modal.wxss';
+page{
+  background-color: #fff;
+}
+.pay-con{
+  padding:40px;
+}
+.price{
+  text-align: center;
+  color:#466466;
+  font-size: 26px;
+  font-weight: 600;
+  margin:10px 0 20px;
+}
+.pay-lable{
+  font-size:16px;
+  color:#466466;
+  margin-bottom: 10px;
+}
+.pay-btn{
+  letter-spacing: 5px;
+}
+.icon-yue{
+  font-size: 24px;
+  line-height: 40px;
+  margin-left: 16px;
+  margin-right: 8px;
+  float: left;
+}

@@ -1,0 +1,45 @@
+/* pages/my/withdrawal/choose/choose.wxss */
+@import "../../person.wxss";
+page{
+  background-color: #ffffff;
+}
+.addcard {
+  float: right;
+  width: 50px;
+  color: #466466;
+  font-size: 12px;
+  text-align: center;
+  line-height: 20px;
+}
+
+.icon-add {
+  font-size: 14px;
+  position: relative;
+  margin-top: -5px;
+}
+.person-btn{
+  position: fixed;
+  bottom: 30px;
+  width: 80%;
+}
+
+.no-data {
+  width: 100%;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-no-record, .icon-notfound {
+  color: #466466;
+  font-size: 70px;
+  line-height: 90px;
+}
+
+.no-data-text {
+  color: #466466;
+  font-size: 16px;
+  line-height: 20px;
+}

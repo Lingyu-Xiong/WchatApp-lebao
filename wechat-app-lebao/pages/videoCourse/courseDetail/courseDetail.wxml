@@ -1,0 +1,73 @@
+<!--pages/videoCourse/courseDetail/courseDetail.wxml-->
+<view class='content'>
+  <view class='imgsrc'>
+    <image mode='scaleToFill' class='img' src='{{coverUrl}}'></image>
+  </view>
+<view class='course-info'>
+  <view class='left'>
+    <view class='course-name'>《{{name}}》</view>
+    <view class='course-intro'>{{intro}}</view>
+    <view class='course-num'>课时：{{courseNum}}</view>
+  </view>
+  <view class='right'>
+  <button class='kefu' open-type='contact'>
+    <image mode='aspectFit' src='https://lebao.oss-cn-beijing.aliyuncs.com/picture/weixin/service.png'></image>
+  </button>
+  </view>  
+</view>
+
+<!--course-info end-->
+ <view class="tabbar">
+        <view wx:for='{{tabbar}}' wx:key='*this' class="{{currentTab==index ? 'active' : ''}}" data-current="{{index}}"     bindtap="switchNav">{{item.value}}
+        </view>
+  </view>
+  <scroll-view class='scroll' scroll-y>
+    <swiper current="{{currentTab}}" class="swiper-box" duration="300" bindchange="bindChange"  style="width:100%;height:{{pageHeight}}px;min-height:100%">
+      <swiper-item style="overflow:scroll">
+        <template  is='detailInfo'  data='{{detailInfo}}' bindload='itemChange'></template>
+      </swiper-item>
+      <swiper-item>
+        <template is='detail' data='{{list:courseList}}'></template>
+      </swiper-item> 
+    </swiper>
+  </scroll-view>
+  <!-- 购买-->
+  <view class='sign-up-blank'></view>
+  <view class='sign-up' wx:if='{{buyStatus==1}}' >
+    <view class='left'>
+      <view class='total'>总额：
+        <text>￥{{price}}</text>
+      </view>
+    </view>
+    <view class='right' bindtap='signUp'>
+      购买
+    </view>
+  </view>
+</view>
+<template name='detail'>
+  <view wx:if='{{list.length==0}}' class='no-data'>
+    <icon class='iconfont icon-notfound'></icon>
+    <view class='no-data-text'>暂无课程 (￣へ￣) </view>
+  </view>
+  <view wx:else class='detail-list'>
+    <view class='detail-single'  wx:for='{{list}}' wx:key='*this' >
+        <view class='detail-left'>
+          <view class='detail-name'>第{{index+1}}讲：{{item.name}}</view>
+          
+        </view>
+        <view class='detail-right'>
+          <view class="button"  data-id="{{item.id}}" data-video="{{item.videoUrl}}" data-title="{{item.name}}" data-remark='{{item.remark}}' data-cover="{{item.coverUrl}}"  bindtap='goToVideo'>观看</view>
+        </view>  
+    </view>
+      
+  </view>
+</template>
+<template name='detailInfo'>
+  <view wx:if='{{detailInfo==" "}}' class='no-data'>
+    <icon class='iconfont icon-notfound'></icon>
+    <view class='no-data-text'>暂无介绍 (￣へ￣) </view>
+  </view>
+  <view  class="rich-text" wx:else>
+   <rich-text nodes="{{detailInfo}}"></rich-text>
+  </view>
+</template>

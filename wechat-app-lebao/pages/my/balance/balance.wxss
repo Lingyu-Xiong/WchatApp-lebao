@@ -1,0 +1,77 @@
+/* pages/my/balance/balance.wxss */
+@import '/template/detail/detail.wxss';
+
+.blank {
+  width: 100%;
+  height: 20px;
+}
+
+.content {
+  width: 100%;
+  background-color: #fff;
+}
+
+.tabbar {
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+}
+
+.swiper-tab {
+  width: 20%;
+  height: 100%;
+  line-height: 80rpx;
+  color: #466466;
+  font-size: 28rpx;
+  background-color: #fff;
+  text-align: center;
+}
+
+.active {
+  background-color: #fff;
+  color: #25aab1;
+  border-style: none none solid none;
+  border-width: 2px;
+  border-color: #25aab1;
+}
+
+.tabbar-detail {
+  margin-top: 16px;
+  width: 100%;
+  height: 24px;
+  margin-bottom: 12px;
+}
+
+.select-time {
+  width: 40%;
+  height: 100%;
+  float: left;
+  margin-left: 5%;
+}
+.top-total{
+  height:80rpx;
+  width:100%;
+  text-align: center;
+  font-size: 22px;
+  color: #fff;
+  background-color: #25aab1;
+}
+.total {
+  width: calc(50% - 10px);
+  height: 100%;
+  text-align: right;
+  padding-right: 16px;
+  color: #466466;
+  font-size: 14px;
+  line-height: 24px;
+  float: right;
+}
+
+.scroll {
+  width: 100%;
+  height: calc(100% - 220rpx);
+}
+
+.swiper-box {
+  width: 100%;
+}

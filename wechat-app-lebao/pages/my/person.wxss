@@ -1,0 +1,348 @@
+/* pages/my/person.wxss */
+
+.personbg {
+  width: 100%;
+  height: 184.5px;
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.personbg-i5 {
+  height: 142px;
+}
+
+.avator {
+  overflow: hidden;
+  margin-top: 28px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-left: calc((100% - 70px) / 2);
+}
+
+.avator-i5 {
+  margin-top: 20px;
+  width: 55px;
+  height: 55px;
+  margin-left: calc((100% - 55px) / 2);
+}
+
+.username {
+  width: 100%;
+  margin-top: 10px;
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+}
+
+.username-i5 {
+  margin-top: 8px;
+  font-size: 16px;
+}
+
+.account {
+  width: 100%;
+  margin-top: 8px;
+  color: #fff;
+  font-size: 10px;
+  text-align: center;
+}
+
+.account-i5 {
+  margin-top: 6px;
+}
+
+.first-block {
+  height: 65px;
+}
+
+.first-block-i5 {
+  height: 50px;
+  margin-top: 12px;
+}
+.block{
+  border-radius: 0
+}
+.second-block{
+  margin-top:0;
+  border-top:1px #eee solid;
+  
+}
+.div {
+  width: calc((100% - 1px) / 2);
+  height: 100%;
+  float: left;
+  text-align: center;
+  color: #25aab1;
+}
+
+.div .text {
+  font-size: 16px;
+  line-height: 25px;
+  margin-top: 12px;
+}
+
+.div-i5 .text {
+  font-size: 14px;
+  line-height: 20px;
+  margin-top: 8px;
+}
+
+.div .num {
+  font-size: 14px;
+  line-height: 20px;
+  color: #869f9e;
+}
+
+.div-i5 .num {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.first-block .line {
+  width: 1px;
+  height: 40px;
+  margin-top: 12.5px;
+  background-color: #25aab1;
+  float: left;
+}
+
+.first-block-i5 .line {
+  width: 1px;
+  height: 30px;
+  margin-top: 10px;
+  background-color: #25aab1;
+  float: left;
+}
+
+.functions {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+}
+
+.function {
+  width: 48px;
+  height: 70px;
+  text-align: center;
+  margin: 0 12px;
+}
+
+.function-i5 {
+  height: 60px;
+  margin: 0 10px;
+}
+
+.func-icon {
+  width: 80%;
+  height: 60%;
+}
+
+.func-icon-i5 {
+  width: 70%;
+  height: 45%;
+}
+
+.function text {
+  color: #466466;
+  display: block;
+  font-size: 12px;
+}
+
+.icon-back {
+  position: absolute;
+  top: 20px;
+  left: 5%;
+  line-height: 40px;
+  color: #25aab1;
+  padding: 0 16px;
+}
+
+.one {
+  margin-top: 5px;
+}
+
+.banner {
+  font-size: 14px;
+  text-align: center;
+  color: #466466;
+}
+
+.content {
+  width: 78%;
+  margin: 5px 11% 35px 11%;
+}
+
+.content-i5 {
+  width: 82%;
+  margin: 5px 9% 35px 9%;
+}
+
+.description {
+  color: #466466;
+  font-size: 17px;
+  line-height: 20px;
+}
+
+.money {
+  width: 100%;
+  height: 64px;
+  margin-top: 12px;
+  background-color: #fbfafa;
+  border: 1px #f6f6f6 solid;
+  border-radius: 5px;
+  box-shadow: inset 2px 2px 4px rgba(249, 249, 249, 0.1);
+}
+
+.icon-money {
+  font-size: 36px;
+  color: #466466;
+  line-height: 64px;
+  margin-left: 16px;
+  float: left;
+}
+
+.input-money {
+  background: transparent;
+  color: #466466;
+  font-size: 36px;
+  padding-left: 8px;
+  outline: none;
+  float: left;
+  width: calc(100% - 65px);
+  height: 64px;
+}
+
+.second {
+  margin-top: 24px;
+  clear: both;
+}
+
+.list {
+  border: 0.5px #e9e9e9 solid;
+  border-radius: 8px;
+  margin-top: 12px;
+}
+
+.single-list {
+  width: 100%;
+  height: 40px;
+  color: #466466;
+  font-size: 14px;
+  line-height: 40px;
+  border-style: none none solid none;
+  border-width: 0.5px;
+  border-color: #e9e9e9;
+}
+
+.single-list:last-child {
+  border: none;
+}
+
+.listpic {
+  margin-left: 16px;
+  float: left;
+  width: 24px;
+  height: 40px;
+}
+
+.single-list text {
+  font-size: 14px;
+  color: #466466;
+  line-height: 40px;
+}
+
+.icon-wxpay{
+  font-size: 24px;
+  line-height: 40px;
+  margin-left: 16px;
+  margin-right: 8px;
+  float: left;
+}
+
+.icon-wxpay {
+  color: #09bb07;
+}
+.icon-yue{
+  color:#25aab1;
+}
+.icon-alipay {
+  color: #1296db;
+}
+
+.icon-selected, .icon-go {
+  font-size: 16px;
+  color: #25aab1;
+  float: right;
+  margin-right: 16px;
+}
+
+.person-btn {
+  background-color: #25aab1;
+  border-radius: 10px;
+  color: #fff;
+  letter-spacing: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 24px;
+}
+
+.blank {
+  width: 100%;
+  height: 35px;
+}
+
+.place-holder {
+  color: #466466;
+  font-size: 13px;
+  line-height: 40px;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.kefu {
+  background: transparent;
+  outline: none;
+  border: none;
+  padding: 0;
+  line-height: 1.6em;
+  font-size: 12px;
+}
+
+.kefu::after {
+  border: none;
+}
+
+.reddot{
+  color:rgb(243, 67, 67);
+  font-size:23px;
+  position:relative;
+  left:15px;
+  top:-32px;
+}
+.getUserInfo{
+  height:28px;
+  width:28px;
+  border-radius:0;
+  position:absolute;
+  right:10px;
+  top:10px;
+  background:none;
+}
+.getUserInfo::after{
+border:none;
+}
+.icon-syn{
+  width:28px;
+  height:28px;
+  position:absolute;
+  right:0;
+  top:-8px;
+  color:#eee;
+}

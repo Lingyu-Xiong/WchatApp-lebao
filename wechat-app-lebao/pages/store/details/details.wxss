@@ -1,0 +1,59 @@
+/* pages/store/details/details.wxss */
+@import "../../school/details/details.wxss";
+@import '/css/modal.wxss';
+.swiper-tab {
+  width: calc((100% - 2px) / 2);
+}
+
+.body-ask-i5 {
+  top: 152px;
+}
+.map{
+  width: 30%;
+  height: 35px;
+  background-color: #f9f9f9;
+  color: #25aab1;
+  font-size: 16px;
+  letter-spacing: 5px;
+  text-align: center;
+  line-height: 35px;
+  position: fixed;
+  bottom: 0px;
+  left: 0;
+  z-index: 999;
+}
+.get {
+  width: 70%;
+  height: 35px;
+  background-color: #25aab1;
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 5px;
+  text-align: center;
+  line-height: 35px;
+  position: fixed;
+  bottom: 0px;
+  right: 0;
+  z-index: 999;
+}
+.price{
+  text-align: left;
+}
+.price-text{
+  color: #25aab1;
+  width: calc(100% - 8px);
+  height: 50%;
+  padding-right: 8px;
+  text-align: right;
+  font-size: 21px;
+}
+.price text{
+  display: block;
+  font-size: 14px;
+  padding-left: 16px;
+  margin-top: 12px;
+}
+.shop-swiper{
+  width:100%;
+  height:200px
+}

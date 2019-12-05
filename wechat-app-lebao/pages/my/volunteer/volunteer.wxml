@@ -1,0 +1,8 @@
+<!--pages/my/volunteer/volunteer.wxml-->
+<view class='content'>
+<view class='check-in' bindtap='checkIn'>
+<text wx:if='{{checked==0}}'>打卡</text>
+<text wx:if='{{checked==1}}'>已打卡</text>
+</view>
+
+</view>

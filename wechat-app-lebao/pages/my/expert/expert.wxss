@@ -1,0 +1,81 @@
+/* pages/my/expert/expert.wxss */
+page{
+  height:100%;
+  background-color: #fff;
+}
+
+
+.search {
+  height: 30px;
+  width: 90%;
+  margin: 10px;
+  border-radius: 10px;
+  background: #dfdddd;
+  box-shadow: 2px 2px 4px rgba(131, 131, 131, 0.2);
+}
+
+.icon-search {
+  padding-left: 20px;
+  padding-right: 10px;
+  line-height: 30px;
+  color: #466466;
+  font-size: 18px;
+}
+
+.search-input {
+  width: calc(100% - 50px);
+  height: 100%;
+  background: transparent;
+  color: #466466;
+  font-size: 14px;
+  float: right;
+}
+.expert-content {
+  font-size:16px;
+  height:100%
+}
+.expert-single{
+  height: 20%;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  /*border-bottom:0.02rem #eeeeee solid;*/
+  border-top:1.05px #a7a6a6 solid;
+  padding: 10px 0;
+}
+.expert-item-pic{
+  margin: 0 10px;
+  width: 30%;
+  height: 100%;
+  /*background: rgb(101, 160, 187)*/
+}
+.text-content{
+  width: 60%;
+  margin-top: 10px;
+  font-size: 16px;
+  color: #a7a6a6;
+  position: relative;
+}
+.expert-name{
+  font-size: 22px;
+  color: #000
+}
+.expert-filed{
+  margin-top: 5px;
+}
+.expert-introduction{
+   margin-top: 5px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    /*white-space:nowrap;*/   
+    display:-webkit-box; 
+    word-break: break-all;
+    -webkit-box-orient:vertical; 
+    -webkit-line-clamp:2; 
+}
+.expert-follow{
+  position: absolute;
+  font-size: 14px;
+  right: 0px;
+  bottom: 0px; 
+}

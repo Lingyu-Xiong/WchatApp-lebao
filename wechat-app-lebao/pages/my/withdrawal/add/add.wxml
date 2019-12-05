@@ -1,0 +1,34 @@
+<!--pages/my/withdrawal/add/add.wxml-->
+<view class='content'>
+  <view class='form'>
+    <view class='form-item'>
+      <view class='desc {{isIphone5?"desc-i5":""}}'>银行名称</view>
+      <Select class='box select' height='40' prop-array='{{selectArray}}' now-text='请选择银行名称' has-img='true' bind:getbank='getBank'></Select>
+    </view>
+    <view class='form-item'>
+      <view class='desc {{isIphone5?"desc-i5":""}}'>银行卡号</view>
+      <input class='box input' type='number' value='{{cardId}}
+          bindinput='inputCardId'
+          placeholder='请输入银行卡号'
+          placeholder-class='place-holder'></input>
+      <icon wx:if='{{cardId.length>0}}' class='iconfont icon-close' bindtap='clearCard'></icon>
+      </view>
+      <view class='form-item'>
+        <view class='desc {{isIphone5? "desc-i5": ""}}'><text space='emsp'>姓  名</text></view>
+        <input class='box input' type='text' value='{{name}}' bindinput='inputName' placeholder='请输入持卡人姓名' placeholder-class='place-holder'></input>
+        <icon wx:if='{{name.length>0}}' class='iconfont icon-close' bindtap='clearName'></icon>
+    </view>
+    <view class='form-item'>
+      <view class='desc {{isIphone5?"desc-i5":""}}'><text space='ensp'>手 机 号</text></view>
+      <input class='box input' type='number' value='{{phone}}'
+          bindinput='inputPhone'
+          maxlength='11'
+          placeholder='请输入银行预留手机号'
+          placeholder-class='place-holder'></input>
+          <icon wx:if='{{phone.length>0}}' class='iconfont icon-close'  bindtap='clearPhone'></icon>
+      </view>
+     
+    </view>
+    <button class='person-btn' bindtap='ensureAdd'>确认</button>
+    <view class='blank'></view>
+  </view>

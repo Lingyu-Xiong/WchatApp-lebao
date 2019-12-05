@@ -1,0 +1,59 @@
+<!--pages/videoCourse/videoCourse.wxml-->
+<view class='content'>
+<!-- header begin-->
+  <view class='header'>
+    <view class='courseselect'>
+      <view class='course-select'>
+        <icon class='iconfont icon-search'></icon>
+        <input class='selinput' type='text' value='{{inputvideo}}' placeholder='搜索课程' placeholder-class='place-holder' bindinput='inputSelect' bindconfirm='search'></input>
+        <icon wx:if='{{inputvideo.length>0}}'  class='iconfont icon-close' bindtap='clearSelect'></icon>
+      </view>
+    </view>
+    <scroll-view scroll-x="true" class="scroll"  >
+      <!--  display: inline-block-->     
+        <view wx:for='{{categoryList}}' wx:key='*this' data-type='{{item.type}}' data-current="{{index}}"  bindtap='switchNav' class="item-card {{currentTab==index ? 'active' : ''}}">
+        {{item.title}}
+        </view>    
+    </scroll-view>
+  </view>
+<!-- header end-->
+<view class='main'>
+<scroll-view class='main-scroll' scroll-y style="height: 100%" bindscrolltolower="searchScrollLower">
+  <!-- ad begin-->
+  <view class='block'>
+  <swiper indicator-dots='true' indicator-color='#ffffff' indicator-active-color='#25aab1' autoplay="true" circular="true" interval="3000" current='{{currentTab1}}'>
+    <block wx:for="{{picList}}" wx:key="*this">
+      <swiper-item>
+        <image class='banner-pic' mode='scaleToFill' src='{{item.src}}' bindtap='adDetails' data-id='{{item.id}}' data-type='{{item.type}}'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  </view>
+  <!-- ad end-->
+  <view class='title'>公开课</view>
+  <!--课程列表-->
+  <view class='course-list' wx:if='{{courseList.length!==0}}' >
+     <view class='course-single' wx:for='{{courseList}}' data-id='{{item.id}}' bindtap='goToDetail'>
+        <view class='course-left'>
+          <image mode='scaleToFill' src='{{item.coverUrl}}'></image>
+        </view>      
+        <view class='course-right'>
+          <view class='course-title'>《{{item.name}}》</view>
+          <view class='course-intro'>{{item.subName}}</view>   
+          <view class='course-price' wx:if='{{item.price==0}}'>免费</view>  
+           <view class='course-price' wx:else>￥{{item.price}}</view>           
+        </view>
+     </view>
+
+  </view>
+  <view wx:else class='no-data'>
+    <icon class='iconfont icon-notfound'></icon>
+    <view class='no-data-text'>暂无课程 (￣へ￣) </view>
+  </view>
+  <view class="loading" hidden="{{!searchLoading}}">正在载入更多...</view>  
+  <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view> 
+   <!--课程列表 end-->
+  </scroll-view>
+</view>
+
+</view>

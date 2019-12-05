@@ -1,0 +1,92 @@
+<!--pages/school/details/details.wxml-->
+<import src='../../../template/contact/contact.wxml' />
+<template is='contact' data=''></template>
+<view class='content'>
+  <view class='body'>
+    <view class='blank'></view>
+   <swiper class='swiper-media' indicator-dots='true' indicator-color='#ffffff' indicator-active-color='#25aab1' autoplay="false" circular="true" interval="999999" style='z-index: 9999999999999999999'>
+      <block wx:for="{{pictures}}" wx:key="*this">
+        <swiper-item>
+          <view class='video-box' wx:if='{{item.video}}'>
+            <video id="myVideo" class="video" src="{{item.picUrl}}" controls></video>
+            <view wx:if="{{show}}" bindtap="playvideo" class='coversrc'>
+              <image mode='scaleToFill' class='img' src='{{coverImgPath}}'></image>
+              <view class='playbtn'>
+                <image src='../../../images/play.png'></image>
+              </view>
+            </view>
+          </view>
+          <image wx:if='{{!item.video}}' class='banner-pic' mode='scaleToFill' src='{{item.picUrl}}'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class='bodycontent'>
+      <view class='body-content'>
+        <view class='text'>营业时间：{{openTime}}</view>
+        <view class='text'>门店电话：{{telephone}}</view>
+        <view class='text' bindtap='goToAddress'>门店地址：
+          <icon class='iconfont icon-address'></icon> {{address}}</view>
+        <view class='blank'></view>
+      </view>
+      <button class='body-ask {{isIphone5?"body-ask-i5":""}}' bindtap='callPhone'>
+        <icon class='iconfont icon-dianhua1'></icon>拨打电话</button>
+    </view>
+  </view>
+</view>
+<view class='content'>
+  <view class='banner'>
+    <view wx:for='{{tabbar}}' class="swiper-tab {{currentTab==index ? 'active' : ''}}" data-current="{{index}}" bindtap="switchNav">{{item.title}}
+      <view class="{{currentTab==index ? 'under-line' : ''}}"></view>
+    </view>
+  </view>
+  <swiper current="{{currentTab}}" class="swiper-box" duration="300" bindchange="bindChange" style="width:100%;height:{{pageHeight}}px;min-height:{{swiperMinHeight}}px">
+    <swiper-item>
+      <view wx:if='{{courseList.length!=0}}'>
+        <view wx:for='{{courseList}}' class='div' wx:key='*this' data-id='{{item.id}}' bindtap='goToCourse'>
+          <image class='div-img' mode='aspectFit' src='{{item.picUrl}}'></image>
+          <view class='details {{isIphone5?"details-i5":""}}'>
+            <view class='details-title'>{{item.title}}</view>
+            <view class='details-desc'>{{item.desc}}</view>
+            <image mode='aspectFit' class='group-label' wx:if='{{item.grouponNum}}' src='../../../images/groupon.png'></image>
+          </view>
+          <view class='price {{isIphone5?"price-i5":""}}'>
+            <!-- <view class='retailPrice'>
+              <text>￥</text>{{item.price}}            
+            </view>
+            <view class='counterPrice'>
+              <text>￥</text>{{item.counterPrice}}         
+            </view> -->
+          </view>
+        </view>
+      </view>
+      <view wx:else>
+        <view class='nodata {{isIphone5?"nodata-i5":""}}'>
+          <icon class='iconfont icon-nocourse'></icon>
+          <view class='nodata-text'>暂无开设课程</view>
+        </view>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view wx:if='{{teacherList.length!=0}}'>
+        <view wx:for='{{teacherList}}' class='div' wx:key='*this' data-id='{{item.id}}' bindtap='goToTeacher'>
+          <image class='div-img teacher-img' mode='aspectFit' src='{{item.picUrl}}'></image>
+          <view class='details teacher-details'>
+            <view class='details-title'>{{item.title}}</view>
+            <view class='details-desc'>{{item.desc}}</view>
+          </view>
+        </view>
+      </view>
+      <view wx:else>
+        <view class='nodata {{isIphone5?"nodata-i5":""}}'>
+          <icon class='iconfont icon-noteacher'></icon>
+          <view class='nodata-text'>暂无授课教师</view>
+        </view>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view class='div desc auto'>
+        {{desc}}
+      </view>
+    </swiper-item>
+  </swiper>
+</view>

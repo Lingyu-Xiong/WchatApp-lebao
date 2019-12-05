@@ -1,0 +1,33 @@
+page{
+  background-color:#fff;
+  height:100%;
+}
+.upload-con{
+  padding:10px;
+}
+.inputView{
+  margin: 10px 0;
+}
+.textarea{
+height:100px;
+width:100%;
+font-size:16px;
+}
+.textarea-placeholder{
+font-size:16px;
+}
+.video{
+  width:200px;
+  height:100px;
+}
+.submitBtn{
+  background-color:#25aab1;
+  border:none;
+  width:70px;
+  height:30px;
+  line-height: 30px;
+  font-size:16px;
+  color:#fff;
+  margin-right:0;
+  top:0;
+}

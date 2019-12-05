@@ -1,0 +1,11 @@
+<!--components/select.wxml-->
+<view class='com-selectBox' style='height:{{height}}px'>
+  <view class='com-sContent' style='height:{{height}}px;line-height:{{height}}px' bindtap='selectToggle'>
+    <view class='com-sTxt'>{{nowText}}</view>
+    <image src='../../images/select.png' class='com-sImg {{height==24?"com-sImg-short":""}}' animation="{{animationData}}"></image>
+  </view>
+  <scroll-view class='com-sList' wx:if="{{selectShow}}" scroll-y>
+    <view wx:for="{{propArray}}" data-index="{{index}}" wx:key='' class='com-sItem' bindtap='setText' style='height:{{height}}px;line-height:{{height}}px'>
+      <image wx:if='{{hasImg}}' class='picsrc' mode='aspectFit' src='{{item.picUrl}}'></image>{{item.text}}</view>
+  </scroll-view>
+</view>

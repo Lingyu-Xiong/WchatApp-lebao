@@ -1,0 +1,27 @@
+/* pages/my/volunteer/volunteer.wxss */
+page {
+  background-color: #fff;
+}
+.content {
+  width: 96%;
+  margin: 2%;
+}
+.check-in{
+border-radius:50%;
+background-color:#fff;
+width:60px;
+height:60px;
+margin-top:20px;
+border:1px solid green;
+left:40%;
+position:relative;
+
+}
+text{
+margin-top:20px;
+left:20%;
+text-align:center;
+position:relative;
+top:28%;
+
+}

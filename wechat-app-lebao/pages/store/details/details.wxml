@@ -1,0 +1,91 @@
+<!--pages/store/details/details.wxml-->
+<import src='../../../template/contact/contact.wxml' />
+<template is='contact' data='{{scrollTop}}'></template>
+<view class='content'>
+  <view class='body'>
+  <view class='blank'></view>
+  <swiper class='shop-swiper' indicator-dots='true' indicator-color='#ffffff' indicator-active-color='#25aab1' autoplay="false" circular="true" interval="999999" >
+    <block wx:for="{{pictures}}" wx:key="*this">
+      <swiper-item>
+      <video wx:if='{{item.video}}'
+    id="myVideo" class='video {{isIphone5?"body-pic-i5":""}}' src="{{item.picUrl}}"
+    enable-danmu
+    danmu-btn
+    controls
+  ></video>
+        <image wx:else class='banner-pic {{isIphone5?"body-pic-i5":""}}' mode='scaleToFill' src='{{item.picUrl}}'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+    <!-- <image class='body-pic {{isIphone5?"body-pic-i5":""}}' mode='aspectFill' src='{{picUrl}}'></image> -->
+    <view class='bodycontent'>
+      <view class='body-content'>
+        <view class='text'>营业时间：{{openTime}}</view>
+        <view class='text'>门店电话：{{telephone}}</view>
+        <view class='text' bindtap='goToAddress'>门店地址：
+          <icon class='iconfont icon-address'></icon> {{address}}</view>
+        <view class='blank'></view>
+      </view>
+      <button class='body-ask {{isIphone5?"body-ask-i5":""}}' bindtap='callPhone'><icon class='iconfont icon-dianhua1'></icon>拨打电话</button>
+    </view>
+  </view>
+</view>
+<view class='bottom-button'>
+<view wx:if='{{showBuyBtn}}' class='map' bindtap='goToAddress'>
+<icon class='iconfont icon-address0'></icon>导航</view>
+<view wx:if='{{showBuyBtn}}' class='get' bindtap='showModal'>买单</view>
+</view>
+<view class='content'>
+  <view class='banner'>
+    <view wx:for='{{tabbar}}' class="swiper-tab {{currentTab==index ? 'active' : ''}}" data-current="{{index}}" bindtap="switchNav">{{item.title}}
+      <view class="{{currentTab==index ? 'under-line' : ''}}"></view>
+    </view>
+  </view>
+  <swiper current="{{currentTab}}" class="swiper-box" duration="300" bindchange="bindChange" style="width:100%;height:{{pageHeight}}px;min-height:{{swiperMinHeight}}px">
+    <swiper-item>
+      <view wx:if='{{goodsList.length!=0}}'>
+        <view wx:for='{{goodsList}}' class='div' wx:key='*this' data-id='{{item.id}}'>
+          <image class='div-img' mode='aspecrFill' src='{{item.picUrl}}'></image>
+          <view class='details {{isIphone5?"details-i5":""}}'>
+            <view class='details-title'>{{item.title}}</view>
+            <view class='details-desc'>{{item.desc}}</view>
+          </view>
+          <view class='price {{isIphone5?"price-i5":""}}'>
+            <text>积分：</text>
+            <view class='price-text'>{{item.price}}</view>
+          </view>
+        </view>
+      </view>
+      <view wx:else>
+        <view class='nodata {{isIphone5?"nodata-i5":""}}'>
+          <icon class='iconfont icon-notfound'></icon>
+          <view class='nodata-text'>暂无出售商品</view>
+        </view>
+      </view>
+    </swiper-item> 
+    <swiper-item>
+      <view class='div desc'>
+        {{desc}}
+      </view>
+    </swiper-item>
+  </swiper>
+</view>
+<!-- 输入支付金额 -->
+<view class="modals modals-bottom-dialog" wx:if="{{showModal}}" catchtouchmove="ture">
+  <view class="modals-cancel" bindtap="hideModal"></view>
+  <view class="bottom-dialog-body bottom-pos" animation="{{animationData}}">
+    <view class='close' bindtap="hideModal">
+      <icon class='iconfont icon-close'></icon>
+    </view>
+    <view class='orderSn'>下单时间：{{time}}</view>
+    <view class='money'>输入积分金额</view>
+    <view class='input'>
+      {{money}}
+    </view>
+    <view class='keyboard'>
+      <view wx:for='{{keyboard}}' class='key' data-value='{{item.value}}' bindtap='getMoney'>{{item.key}}</view>
+      <view class='key' bindtap='deletePassword'><icon class='iconfont icon-delete'></icon></view>
+    </view>
+  </view>
+</view>
+<!-- 输入支付金额 -->

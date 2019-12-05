@@ -1,0 +1,15 @@
+<!--pages/store/store.wxml-->
+<!-- <import src='../../template/contact/contact.wxml' />
+<template is='contact' data='{{scrollTop}}'></template>
+<import src='../../template/menu/menu.wxml'/>
+<template is='menu' data='{{navbarList,hotPic,contentHeight,schoolList,isIphone5:isIphone5,currentType,text:"商城精选",counterPri:"storeDetails"}}'>
+</template> -->
+<view class='store'>
+<view class='text text1'>
+商家招募火热进行中
+</view>
+<view class='text '>
+欢迎您的加入
+</view>
+<image class='store-pic' mode='aspectFit' src='https://www.lebao108.com/images/weixin/Bitmap.png'></image>
+</view>

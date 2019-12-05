@@ -1,0 +1,113 @@
+page{
+  background-color:#fff;
+}
+.groupbuy-con{
+  margin:5vw;
+}
+/* 查询 */
+.serve-select {
+  width: 100%;
+  height: 30px;
+  color: #466466;
+  font-size: 10px;
+  line-height: 24px;
+  border: 0.5px #e9e9e9 solid;
+  border-radius: 10rpx;
+  margin:10px 0;
+  display:flex;
+  flex-wrap: nowrap
+}
+
+.icon-search {
+  margin:0 5px;
+  height:30px;
+  line-height: 30px;
+  color: #466466;
+  font-size: 18px;
+  flex-basis: 20px;
+}
+
+.serve-select .selinput {
+  width: calc(100% - 55px);
+  font-size:14px;
+  height:30px;
+  line-height: 30px;
+}
+
+.icon-close {
+  flex-basis: 15px;
+  font-size: 15px;
+  color: #466466;
+  height:30px;
+  line-height: 30px;
+  margin:0 5px;
+}
+
+.place-holder {
+  color: #e6e6e6;
+  font-size: 14px;
+  line-height: 24px;
+}
+/* 价格 */
+.originalPrice {
+  color: #c5c5c5;
+  font-size: 16px;
+  text-decoration: line-through;
+}
+
+.discountPrice {
+  color: #e7010d;
+  font-size: 16px;
+}
+.grouplist{
+  margin:10px 0;
+}
+.group-single{
+  margin-top:15px;
+  padding-bottom: 15px;
+  border-bottom: 1px #eee solid;
+  display:flex;
+}
+.pic-box{
+  flex-basis: 40vw;
+  height:25vw;
+}
+.course-pic{
+  width:100%;
+  height:25vw;
+}
+.course-con{
+  flex-basis: 50vw;
+  height:25vw;
+padding-left:10px;
+}
+.con-name{
+  font-size:17px;
+  color:#466466;
+  height:18vw;
+}
+.con-bottom{
+display:flex;
+justify-content: space-between;
+height:7vw;
+}
+.act-price{
+  display:flex;
+}
+.join-btn{
+  width:18vw;
+  height:6vw;
+  background-color:#FB4E4E;
+  border-radius: 20px;
+  font-size:14px;
+  line-height: 6vw;
+  color:#fff;
+  text-align: center;
+  margin-left:5px;
+}
+.nodata{
+   font-size:16px;
+  color:#466466;
+  text-align: center;
+  margin-top:200px;
+}

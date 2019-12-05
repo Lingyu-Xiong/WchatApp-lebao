@@ -1,0 +1,90 @@
+<view class='gui-test'>
+  <view class='gui-title'>本次测试所产生的数据及结果仅用于专家分析点评，以便向您提供更具有针对性的教学指导意见
+  </view>
+  <view class='gui-con'>
+    <view class='gui-banner'>
+      <view class="item-list" wx:for="{{itemlist}}">
+        <view class='item-text {{currentTab==index ? "item-text-active" : ""}}' bindtap="switchNav" data-current="{{index}}">{{item.name}}</view>
+        <view class="{{currentTab==index ? 'under-line' : ''}}"></view>
+      </view>
+    </view>
+    <view class='gui-detail'>
+      <view class="con-hide {{currentTab==0?'con-show':''}}">
+        <scroll-view class='main-scroll test-main-scroll' scroll-y style="height: 100%">
+          <view class="questionList" wx:if='{{total!=0}}'>
+            <view class='test-question' wx:for='{{questionList}}' data-id='{{item.id}}' wx:key='*this' wx:for-index="quesIndex">
+              {{quesIndex+1}}、{{item.content}}
+              <view class='answerList' data-quesid='{{item.id}}' data-index='{{quesIndex}}' wx:for-item="question" wx:for='{{item.questionItems}}' wx:key='*this' data-ansid='{{question.id}}' bindtap='select'>
+                <view class="{{item.curId==question.id?'index-1':'index'}}">
+                  <text>{{question.identityId}}.</text>
+                </view>
+                <view class="{{item.curId==question.id?'answer-1':'answer'}}">{{question.item}}</view>
+              </view>
+            </view>
+          </view>
+          <view class="questionList" wx:if='{{fillblankList.length!=0}}'>
+            <view class='fillblank-label'>问答题</view>
+            <view class='test-question' wx:for='{{fillblankList}}' wx:key='*this' wx:for-index="quesIndex">
+              {{quesIndex+1}}、{{item.content}}
+              <textarea class='textarea' placeholder="请写下您的答案..." name="textarea" maxlength='300' show-confirm-bar="{{false}}" auto-focus="{{false}}" bindblur='textinput' data-id='{{item.id}}' />
+            </view>
+          </view>
+          <view class="nodata" wx:if='{{total==0}}'>暂无题目</view>
+        </scroll-view>
+        <view class='test-tips'>
+          <view class='test-tips-label'>温馨提示：</view>
+          <rich-text class="test-tips-con" nodes="{{selectcon}}" space='nbsp'></rich-text>
+        </view>
+        <view class='test-next'>
+          <view class='test-next-btn' bindtap='quesNext'>
+            下一步
+          </view>
+        </view>
+      </view>
+      <!-- picture -->
+      <view class="con-hide {{currentTab==1?'con-show':''}}">
+        <view class='test-image-con'>
+          <view wx:for='{{imgtempArr}}'>
+            <view bindtap="showImage" data-id="{{index}}">
+              <image class="test-image" src="{{item}}" mode='aspectFit'></image>
+              <icon class='iconfont icon-close icon-del' catchtap='deleteImv' data-id="{{index}}"></icon>
+            </view>
+          </view>
+          <view>
+            <image bindtap='chooseimg' class='addvideo' src='{{addimgUrl}}' wx:if="{{chooseViewShow}}">
+            </image>
+          </view>
+        </view>
+        <view class='test-tips'>
+          <view class='test-tips-label'>温馨提示：</view>
+          <rich-text class="test-tips-con" nodes="{{piccon}}" space='nbsp'></rich-text>
+        </view>
+        <view class='test-next'>
+          <view class='test-next-btn' bindtap='picNext'>
+            下一步
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- video -->
+    <view class="con-hide {{currentTab==2?'con-show':''}}">
+      <view class='test-video-con'>
+        <view wx:if='{{!videotempPath}}'>
+          <image bindtap='choosevideo' class='addvideo' src='{{addvideoUrl}}'>
+          </image>
+        </view>
+        <video wx:if='{{videotempPath}}' class="test-video" src="{{videotempPath}}" controls></video>
+        <icon wx:if='{{videotempPath}}' class='iconfont icon-close icon-videodel' bindtap='videodel'></icon>
+      </view>
+      <view class='test-tips'>
+        <view class='test-tips-label'>温馨提示：</view>
+        <rich-text class="test-tips-con" nodes="{{videocon}}" space='nbsp'></rich-text>
+      </view>
+      <view class='test-next'>
+        <view class='test-next-btn' bindtap='upload'>
+          完成
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

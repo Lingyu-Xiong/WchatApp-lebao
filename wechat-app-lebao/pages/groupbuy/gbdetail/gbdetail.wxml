@@ -1,0 +1,63 @@
+<view class='gbdetail'>
+  <!-- 拼团中 -->
+  <view class='course-logo-box' wx:if='{{groupinfo.status==1}}'>
+    <image mode='aspectFit' class='course-logo-img' src='{{groupinfo.actLogoUrl}}'></image>
+  </view>
+  <!-- 拼团成功 -->
+  <view class='course-logo-box' wx:if='{{groupinfo.status==3}}'>
+     <view class=' shibai-box'>
+      <image class='shibai-img' src='../../../images/chenggong.png'></image>
+      <view class='shibai-title chenggong'>拼团成功!</view>
+      <view class='shibai-con' wx:if='{{groupinfo.curUser}}'>恭喜您拼团成功，请继续关注我们的活动哦！</view>
+      <view class='shibai-con' wx:if='{{!groupinfo.curUser}}'>您来晚啦，该团已满！</view>
+    </view>
+  </view>
+  <!-- 拼团失败 -->
+  <view class='course-logo-box'  wx:if='{{groupinfo.status==4}}'>
+    <view class=' shibai-box'>
+      <image class='shibai-img' src='../../../images/shibai.png'></image>
+      <view class='shibai-title'>拼团失败!</view>
+      <view class='shibai-con' wx:if='{{groupinfo.curUser}}'>系统将会在1-3个工作日内,将款项退还至您的账户</view>
+      <view class='shibai-con' wx:if='{{!groupinfo.curUser}}'>拼团已失效</view>
+    </view>
+  </view>
+  <view class='course-info'>
+    <view class='cinfo-price'>
+      <view class='discountPrice'>￥{{ groupinfo.discountPrice}}</view>
+      <view class='originalPrice'>￥{{ groupinfo.originalPrice}}</view>
+    </view>
+    <view class='cinfo-name'>{{groupinfo.actName}}</view>
+  </view>
+  <!-- 拼单成员 -->
+  <view class='group-info'>
+    <view class='ginfo-avatar-list'>
+      <view class='avatar-single'>
+        <view class='avatar-single-box leader'>
+          <image class='user-avatar' src='{{groupinfo.leaderavatar}}'></image>
+        </view>
+        <cover-view class='leader-label'>团长</cover-view>
+      </view>
+      <view class='avatar-single' wx:for='{{follows}}'>
+        <view class='avatar-single-box'>
+          <image class='user-avatar' src='{{item.avatar}}'></image>
+        </view>
+      </view>
+    </view>
+    <view class='ginfo-detail' wx:if='{{groupinfo.status==1}}'>
+      <view class='detail-1'>仅剩
+        <text>{{groupinfo.neednum}}</text>个名额</view>
+      <view class='detail-2'>{{countDown.day}}天{{countDown.hou}}时{{countDown.min}}分{{countDown.sec}}秒后结束</view>
+    </view>
+    <view wx:if='{{groupinfo.status==1}}'>   
+      <button open-type="share" class='invite-btn' wx:if='{{groupinfo.curUser}}'>邀请好友拼单</button>
+      <view class='invite-btn' wx:if='{{!groupinfo.curUser}}' bindtap='gbconfirmOrder'>参与拼单</view>
+    </view>
+  </view>
+  <!-- 返回首页 -->
+  <view class='backtohome' bindtap='tohome'>返回首页</view>
+  <!-- 拼单规则 -->
+  <view class='bottom-rule'>
+    <view class='rule-left'>拼单规则</view>
+    <view class='rule-right'>好友拼单·人满发货·人不满退款</view>
+  </view>
+</view>

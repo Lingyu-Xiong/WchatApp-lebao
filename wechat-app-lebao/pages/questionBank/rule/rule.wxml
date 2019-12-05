@@ -1,0 +1,8 @@
+<!--pages/questionBank/rule/rule.wxml-->
+<view wx:if="{{content==''}}" class='no-data'>
+  <icon class='iconfont icon-Astronaut'></icon>
+  <view class='no-data-text'>暂无规则</view>
+</view>
+  <view class='news-con'>
+    <rich-text class="rich-text" nodes="{{content}}"></rich-text>
+  </view>

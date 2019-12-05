@@ -1,0 +1,93 @@
+<!--pages/-->
+<view class='course-content'>
+  <view class='body'>
+    <swiper class='swiper-media' indicator-dots='true' indicator-color='#ffffff' indicator-active-color='#25aab1' autoplay="false" circular="true" interval="999999" style='z-index: 9999999999999999999'>
+      <block wx:for="{{pictures}}" wx:key="*this">
+        <swiper-item>
+          <view class='video-box' wx:if='{{item.video}}'>
+            <video id="myVideo" class="video" src="{{item.picUrl}}" controls></video>
+            <view wx:if="{{show}}" bindtap="playvideo" class='coversrc'>
+              <image mode='scaleToFill' class='img' src='{{coverImgPath}}'></image>
+              <view class='playbtn'>
+                <image src='../../../../images/play.png'></image>
+              </view>
+            </view>
+          </view>
+          <image wx:if='{{!item.video}}' class='banner-pic' mode='scaleToFill' src='{{item.picUrl}}'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class='bodycontent'>
+      <view class='c-body-content-top'>
+        <view class='course-price'>
+          <view class='discountPrice'>
+            ￥{{discountPrice}}/课时
+          </view>
+          <view class='originalPrice'>
+            ￥{{originalPrice}}/课时
+          </view>
+        </view>
+        <view class='course-name'>{{courseName}}</view>
+      </view>
+      <view class='c-body-content'>
+        <view class='text'>老师：{{teacher}}</view>
+        <view class='text'>上课次数：{{times}}</view>
+        <view class='text'>上课时间：{{classTime}}</view>
+        <view class='text' bindtap='goToAddress'>上课地点：
+          <icon class='iconfont icon-address'></icon>{{address}}</view>
+
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 拼团 -->
+<view class='group-buy'>
+  <view class='group-head'>
+    <view class='head-left'>
+      <text>正在拼单，可直接参与</text>
+    </view>
+    <view class='head-right'>
+    <!-- 查看更多
+      <icon class='iconfont icon-go'></icon> -->
+    </view>
+  </view>
+  <view class='nogroup' wx:if='{{groupList.length==0}}'>暂无开团</view>
+  <view class='group-list'>
+    <scroll-view scroll-y style="height: 130px;">
+      <view class='group-single' wx:for='{{groupList}}'>
+        <view class='user-info'>
+          <view class='avatar-box'>
+            <image class='user-avatar' src='{{item.avatar}}'></image>
+          </view>
+          <view class='gbc-user-name'>{{item.nickname}}</view>
+        </view>
+        <view class='group-info'>
+          <view class='info-1'>还差{{item.neednum}}人拼成</view>
+          <view class='info-2'>剩余{{countdownList[index].day}}天{{countdownList[index].hou}}时{{countdownList[index].min}}分{{countdownList[index].sec}}秒</view>
+        </view>
+        <view class='join-btn' bindtap='tojoin' data-id='{{item.id}}'>去拼单</view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+
+<!-- 课程描述 -->
+<view class='course-content'>
+  <view class='div desc'>
+    <view class='course-desc'>
+      <icon class='iconfont icon-course-desc'></icon> 课程描述</view>
+    <text>{{description}}</text>
+  </view>
+</view>
+<view class='sign-up-blank'></view>
+
+<!-- 参团 -->
+<view class='gb-sign-up'>
+  <view class='gbc-gb-left'>
+    <view class='total'>总额：
+      <text>￥{{discountPrice}}</text>
+    </view>
+    <view class='personNum'>开课人数：{{maxStudent}}</view>
+  </view>
+  <view class='gb-right' bindtap='gbconfirmOrder'>￥{{discountPrice}}我要开团</view>
+</view>

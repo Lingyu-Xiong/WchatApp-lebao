@@ -1,0 +1,40 @@
+<!--pages/questionBank/challenge/challenge.wxml-->
+<view class="challenge"  wx:if='{{questionList.length!=0}}'>
+  <view class='header'>
+    <view class="line1"></view>
+      <view class="title">
+        <view class="title-left">   
+          <image mode='aspectFit' src='{{timeUrl}}'></image>
+          <text>{{hours}}:{{minute}}:{{second}}</text>
+        </view>
+        <view class="title-right">
+          <text>已完成(</text>
+          <text class="title-right-1">{{hasDoneNum}}</text>
+          <text>/{{totalNum}})题</text>
+        </view>
+      </view>
+  </view>
+  <view class='main'>
+  <scroll-view class='main-scroll' scroll-y style="height: 100%">
+    <view class="questionList">
+   <view class='question' wx:for='{{questionList}}' data-id='item.id' wx:key='*this' wx:for-index="quesIndex">
+    {{quesIndex+1}}、{{item.question}}
+    <view class='answerList' data-quesid='{{item.id}}' data-index='{{quesIndex}}' wx:for-item="question"  wx:for='{{item.questionItems}}' wx:key='*this' data-ansid='{{question.id}}' bindtap='select'>
+      <view class="{{item.curId==question.id?'index-1':'index'}}" ><text>{{question.identityId}}</text></view>
+      <view class="{{item.curId==question.id?'answer-1':'answer'}}">{{question.answer}}</view>
+    </view>
+    </view>
+  <view class="button" style="background-image: url('{{buttonUrl}}');" bindtap='submitAns'>
+    提交 
+  </view>
+  </view>
+   </scroll-view>
+</view>
+  
+  </view>  
+   <view wx:else>
+        <view class='nodata {{isIphone5?"nodata-i5":""}}'>
+          <icon class='iconfont icon-expert'></icon>
+          <view class='nodata-text'>题目正在加载中</view>
+        </view>
+</view> 

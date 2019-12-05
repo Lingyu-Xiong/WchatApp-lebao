@@ -1,0 +1,74 @@
+/* pages/my/withdrawal/add/add.wxss */
+@import "../../person.wxss";
+
+.content {
+  width: 94%;
+  margin: 5px 3% 35px 3%;
+}
+
+.blank {
+  height: 10px;
+}
+
+page {
+  background-color: #fff;
+}
+
+.form {
+  margin-top: 35px;
+  margin-left:3%;
+}
+
+.form-item {
+  width: 100%;
+  height: 40px;
+  margin-top: 12px;
+  color: #466466;
+}
+
+.form-item:first-child {
+  margin: 0;
+}
+
+.desc {
+  width: 22%;
+  height: 100%;
+  text-align: right;
+  line-height: 40px;
+  padding-right: 12px;
+  float: left;
+  font-size: 16px;
+}
+
+.desc-i5 {
+  font-size: 15px;
+}
+
+.box {
+  width: calc(68% - 20px);
+  height: 100%;
+  float: left;
+}
+
+.input {
+  width: calc(68% - 40px);
+  border: 0.5px solid #e9e9e9;
+  padding-left: 16px;
+  border-radius: 10px;
+  color: #466466;
+  font-size: 13px;
+}
+
+.content-i5 {
+  width: 86%;
+  margin: 35px 7%;
+}
+
+.icon-close {
+  font-size: 20px;
+  line-height: 40px;
+  color: #466466;
+  padding-right: 8px;
+  width: 20px;
+  float: right;
+}

@@ -1,0 +1,7 @@
+<!--components/getCode/getCode.wxml-->
+<view class='btn' style='background-color:{{backgroundColor}};border:{{border}}'>
+  <input class='code-input {{isTransparent=="1"?"":"codeinput"}} {{isIphone5?"codeinput-i5":""}}' style='color:{{inputColor}}' value='{{code}}' type='text' bindinput='inputCode' placeholder='请输入验证码' placeholder-class="{{placeHolderColor}}">
+  </input>
+  <view class='line {{isTransparent=="1"?"":"code-line"}}'></view>
+  <button class='codeBtn {{isTransparent=="1"?"":"code-btn"}} {{isIphone5?"code-btn-i5":""}}' style='color:{{btnColor}}' bindtap='getCode' disabled='{{disabled}}'>{{codename}}</button>
+</view>

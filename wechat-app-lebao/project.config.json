@@ -1,0 +1,273 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.6.4",
+	"appid": "wxd1d64f263b460d0e",
+	"projectname": "weixin",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 31,
+			"list": [
+				{
+					"id": -1,
+					"name": "homepage",
+					"pathName": "pages/homepage/homepage",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "schooldetails",
+					"pathName": "pages/school/details/details",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "storedetails",
+					"pathName": "pages/store/details/details",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "confirmOrder",
+					"pathName": "pages/confirmOrder/confirmOrder",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "addstudent",
+					"pathName": "pages/confirmOrder/addstudent/addstudent",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "addstudentdetail",
+					"pathName": "pages/confirmOrder/addstudent/addstudentdetail/addstudentdetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "addstudentdetail",
+					"pathName": "pages/confirmOrder/addstudent/addstudentdetail/addstudentdetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "serve",
+					"pathName": "pages/my/serve/serve",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "video",
+					"pathName": "pages/video/video",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "school",
+					"pathName": "pages/school/school",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "examReg",
+					"pathName": "pages/examReg/examReg",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "news",
+					"pathName": "pages/news/news",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "newsdetail",
+					"pathName": "pages/news/newsdetail/newsdetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "confirmsign",
+					"pathName": "pages/examReg/confirmsign/confirmsign",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "examstu",
+					"pathName": "pages/examReg/examstu/examstu",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pay",
+					"pathName": "pages/examReg/pay/pay",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "myexam",
+					"pathName": "pages/my/exam/exam",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "myvideo",
+					"pathName": "pages/my/myvideo/myvideo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "upload",
+					"pathName": "pages/my/myvideo/upload/upload",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "videodetail",
+					"pathName": "pages/video/videodetail/videodetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 20,
+					"name": "videoCourse",
+					"pathName": "pages/videoCourse/videoCourse",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "vcdetail",
+					"pathName": "pages/videoCourse/vcdetail/vcdetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "guidance",
+					"pathName": "pages/guidance/guidance",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "test",
+					"pathName": "pages/guidance/test/test",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "resultdetail",
+					"pathName": "pages/guidance/resultdetail/resultdetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "groupbuy",
+					"pathName": "pages/groupbuy/groupbuy",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "gbdetail",
+					"pathName": "pages/groupbuy/gbdetail/gbdetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "mygroupbuy",
+					"pathName": "pages/my/mygroupbuy/mygroupbuy",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "subgroupbuy",
+					"pathName": "pages/groupbuy/subgroupbuy/subgroupbuy",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "gborderdetail",
+					"pathName": "pages/my/mygroupbuy/gborderdetail/gborderdetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "gbdetailparams",
+					"pathName": "pages/groupbuy/gbdetail/gbdetail",
+					"query": "groupid=27",
+					"scene": 1036,
+					"referrerInfo": {}
+				},
+				{
+					"id": 31,
+					"name": "loadingparams",
+					"pathName": "pages/loading/loading",
+					"query": "groupid=27",
+					"scene": 1036,
+					"referrerInfo": {}
+				}
+			]
+		}
+	}
+}

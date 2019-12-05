@@ -1,0 +1,42 @@
+<!--template/menu/menu.wxml-->
+<template name='menu'>
+  <view class='search'>
+    <icon class='iconfont icon-search'></icon>
+    <view class='search-input' value='{{search}}' type='text' bindtap='search'></view>
+  </view>
+  <view class='content {{isIphone5?"content-i5":""}}' style='height:{{contentHeight}}px'>
+    <view class='navbar-list'>
+      <view wx:for='{{navbarList}}' data-type='{{item.type}}' bindtap='changeType' class='navbar {{currentType==item.type?"active":""}}'>
+        {{item.name}}
+      </view>
+    </view>
+    
+    <view class='school-list' >
+      <scroll-view class='schoollist {{isIphone5?"schoollist-i5":""}}' scroll-y scroll-top='{{scrollTop}}' bindscroll='scroll'>
+        <view class='hot-school {{isIphone5?"hot-school-i5":""}}'>
+          <swiper indicator-dots='true' indicator-color='#ffffff' indicator-active-color='#25aab1' autoplay="false" circular="false">
+            <block wx:for="{{hotPic}}" wx:key="*this">
+              <swiper-item>
+                <image class='hot-pic' mode='scaleToFill' src='{{item.src}}' bindtap='adDetails' data-id='{{item.id}}' data-type='{{item.type}}'></image>
+              </swiper-item>
+            </block>
+          </swiper>
+          <text class='school-name'>—— {{text}} ——</text>
+        </view>
+        
+    <view wx:if='{{schoolList.length!=0}}'>
+        <view wx:for='{{schoolList}}' wx:key='*this' class='school {{isIphone5?"school-i5":""}}' data-id='{{item.id}}' bindtap='{{counterPri}}'>
+          <image class='school-pic' mode='aspectFit' src='{{item.logoUrl}}'></image>
+          <text class='school-name'>{{item.name}}</text>
+        </view>
+        </view>
+        <view wx:else>
+       <view class='nodata {{isIphone5?"nodata-i5":""}}'>
+          <icon class='iconfont icon-school'></icon>
+          <view class='nodata-text'>暂无相关学校</view>
+        </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</template>

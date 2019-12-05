@@ -1,0 +1,70 @@
+<!--pages/homepage/homepage.wxml-->
+<import src='../../template/contact/contact.wxml' />
+<template is='contact' data=''></template>
+<view class='block'>
+  <swiper indicator-dots='true' indicator-color='#ffffff' indicator-active-color='#25aab1' autoplay="true" circular="true" interval="3000" current='{{currentTab}}'>
+    <block wx:for="{{picList}}" wx:key="*this">
+      <swiper-item>
+        <image class='banner-pic' mode='scaleToFill' src='{{item.src}}' bindtap='adDetails' data-id='{{item.id}}' data-type='{{item.type}}'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class='block item-list'>
+  <view class='function' wx:for='{{itemList}}' wx:key='*this' data-type='{{item.type}}' bindtap='goToSchool'>
+    <image class='item-pic' mode='aspectFit' src='{{item.src}}'></image>
+    <text class='item-text'>{{item.text}}</text>
+  </view>
+</view>
+<!-- 音乐学府 -->
+<!-- <block wx:for='{{typeList}}' wx:key='*this'>
+  <template is='schoolList' data='{{item}}'></template>
+</block> -->
+
+<!-- 新闻 -->
+<view class='block news-box'>
+  <image class='toutiao' mode='aspectFit' src='../../images/homepage/headline.png' bindtap='getToutiao'></image>
+  <!-- <view class='news-list'>
+    <view class='news-single' wx:for='{{newsList}}'>
+      {{item.desc}}</view>
+  </view> -->
+<swiper class='newsswiper' autoplay="true" circular="true" interval="3000" vertical='true' display-multiple-items='2'>
+    <block wx:for="{{newsList}}">
+      <swiper-item>
+        <view class='news-single'  bindtap='newsDetails' data-id='{{item.id}}'>
+      {{item.desc}}</view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<!-- 热门活动 -->
+<view class='block hot-box'>
+  <view class='hot-banner'></view>
+  <view class='hot-content'>
+    <view class='hot-single' wx:for='{{hotList}}' wx:key='*this' data-id='{{item.hotid}}' bindtap='goTohot'>
+      <image class='hot-item-pic' mode='scaleToFill	' src='{{item.src}}'></image>
+      <view class='hot-text'>{{item.text}}</view>
+    </view>
+  </view>
+</view>
+
+<view class='blank'></view>
+
+<template name='schoolList'>
+  <view wx:if='{{item["schoolList"].length!=0}}' class='block'>
+    <view class='banner'>
+      <view class='banner-line'></view>
+      <text>{{item['text']}}学府</text>
+      <view class='more' data-type='{{item["type"]}}' bindtap='goToSchool'>更多
+        <icon class='iconfont icon-go'></icon>
+      </view>
+    </view>
+    <view class='school-list'>
+      <view class='school {{isIphone5?"school-i5":""}}' wx:for='{{item["schoolList"]}}' wx:key='*this' bindtap='schoolDetails' data-id='{{item.id}}'>
+        <image class='school-pic' mode='aspectFill' src='{{item.logoUrl}}'></image>
+        <text class='school-name'>{{item.name}}</text>
+        <!-- <text class='school-place'>{{item.place}}</text> -->
+      </view>
+    </view>
+  </view>
+</template>

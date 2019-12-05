@@ -1,0 +1,11 @@
+<view wx:if='{{nodata}}' class='no-data'>
+  <icon class='iconfont icon-Astronaut'></icon>
+  <view class='no-data-text'>这条新闻到月球上去了 (￣へ￣) </view></view>
+  <view class='news-con' wx:if='{{!nodata}}'>
+    <text class='main-title'>{{title}}</text>
+    <view class='tag'>
+      <view class='time'>{{updateTime}}</view>
+      <view class='count'>{{readCount}}人浏览</view>
+    </view>
+    <rich-text class="rich-text" nodes="{{content}}" space='nbsp'></rich-text>
+  </view>

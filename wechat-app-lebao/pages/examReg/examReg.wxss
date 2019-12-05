@@ -1,0 +1,100 @@
+page{
+
+}
+.exam-content{
+padding:15px;
+}
+.exam-list{
+
+}
+.exam-single{
+margin-bottom: 15px;
+background-color:#fff;
+ border-radius: 8px;
+ box-shadow: 0 3px 18px #d0d0d0;
+ display:flex;
+ flex-direction: row;
+ overflow: hidden;
+ position:relative;
+}
+.script{
+flex-basis: 88%;
+padding:20px;
+}
+.exam-name{
+  font-size:20px;
+  color:#466466;
+line-height: 30px;
+  margin:5px 0;
+  display:-webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.icon-nocourse{
+  margin-right:5px;
+}
+.exam-time{
+ font-size:15px;
+  color:#808080;
+  margin:5px 0;
+}
+.viewdetail{
+flex-basis: 12%;
+background-color:#25aab1;
+color:#fff;
+border-radius: 0 8px 8px 0;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+z-index:99;
+}
+text{
+  font-size:18px;
+  width:18px;
+  display: block;
+line-height: 20px;
+}
+.no-data {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top:180px;
+}
+
+.icon-no-record, .icon-notfound {
+  color: #466466;
+  font-size: 70px;
+  line-height: 90px;
+}
+
+.no-data-text {
+  color: #466466;
+  font-size: 16px;
+  line-height: 20px;
+}
+.bg-circle-top{
+  width:200px;
+  height:200px;
+  position:absolute;
+  background-color:#25aab1;
+  opacity:0.06;
+  border-radius: 50%;
+  overflow: hidden;
+  top:-100px;
+  right:-50px;
+}
+.bg-circle-bottom{
+  width:350px;
+  height:200px;
+  position:absolute;
+  background-color:#25aab1;
+  opacity:0.06;
+  border-radius: 50%;
+  overflow: hidden;
+  top:40px;
+  right:-50px;
+}

@@ -1,0 +1,7 @@
+/* pages/my/integral/integral.wxss */
+@import '../balance/balance.wxss';
+@import '/template/detail/detail.wxss';
+
+.swiper-tab {
+  width: 25%;
+}

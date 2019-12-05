@@ -1,0 +1,16 @@
+@import'../../school/details/course/course.wxss';
+.user-info{
+  width:45%;
+  display:flex;
+  align-items: center;
+}
+.gbc-user-name{
+  width:80px;
+  margin-left:5px;
+  font-size:16px;
+  color:#25aab1;
+}
+.gbc-gb-left{
+    width: calc(100% - 120px);
+  height: 100%;
+}

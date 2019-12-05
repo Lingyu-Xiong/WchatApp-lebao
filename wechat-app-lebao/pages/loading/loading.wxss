@@ -1,0 +1,31 @@
+/* pages/loading/loading.wxss */
+
+page {
+  color: #fff;
+}
+
+.title {
+  margin-top: 240rpx;
+  font-size: 36px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.title-decsript {
+  margin-top: 30rpx;
+  font-size: 18px;
+  text-align: center;
+}
+.progress-text{
+  text-align: center;
+  font-size: 13px;
+  margin-top: 160rpx;
+}
+.progress{
+  width: 88%;
+  height: 16px;
+  margin-top: 25rpx;
+  margin-left: 6%;
+  border: 0.5px solid #fff;
+  border-radius: 8px
+}

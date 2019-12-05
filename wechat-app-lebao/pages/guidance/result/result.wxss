@@ -1,0 +1,26 @@
+@import'../../examReg/examReg';
+.gui-result{
+  margin:10px;
+}
+.gui-exam-single{
+  align-items: center;
+}
+.gui-script{
+  flex-basis: 55%;
+}
+.gui-viewdetail{
+  flex-basis: 30%;
+  height:35px;
+  line-height: 35px;
+  background-color:#25aab1;
+  color:#fff;
+  font-size:16px;
+  border-radius:20px;
+  text-align: center;
+  z-index:99;
+  margin-right:5px;
+}
+.nofeed{
+  background-color: #ffc56f;
+  color:#975a00;
+}

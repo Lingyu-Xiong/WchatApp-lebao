@@ -1,0 +1,11 @@
+<view class='info-con'>
+  <view class='name'>{{name}}</view>
+  <rich-text class="rich-text" nodes="{{detailInfo}}"></rich-text>
+  <view class='examinfoblank'></view>
+</view>
+<view class='info-bottom'>
+    <button open-type='contact' class='chat exam-chat'> <icon class='iconfont icon-kefu'></icon>客服</button>
+    <view class='price' bindtap='examsign'>立即报名
+    <!-- ￥{{price}} -->
+    </view>
+  </view>

@@ -1,0 +1,72 @@
+<view class='video-con'>
+  <view class='video-box'>
+    <view class='video-title'>
+      <view class='userimg-box'>
+        <image class='user-avtor' src='{{avatar}}'></image>
+      </view>
+      <view class='name-time'>
+            <view class='user-name'>{{nickname}}</view>
+            <view class='update-time'>{{addTime}}</view>
+          </view>
+    </view>
+    <video id="myVideo" class="video" src="{{url}}" controls></video>
+    <view class='video-desc'>{{description}}</view>
+    <view class='video-expert' wx:for='{{expcomments}}'>
+      {{item.userName}}:{{item.comment}}
+    </view>
+  </view>
+  <view class='video-bottom video-bottom-detail'>
+    <view class='func func-detail {{currentTab==0 ? "func-detail-active" : ""}}' bindtap="switchNav" data-current="0">
+      评论
+      <text>{{comment}}</text>
+      <view class="{{currentTab==0 ? 'under-line' : ''}}"></view>
+    </view>
+    <view class='func func-detail {{currentTab==1 ? "func-detail-active" : ""}}' bindtap="switchNav" data-current="1">
+      赞
+      <text>{{like}}</text>
+      <view class="{{currentTab==1 ? 'under-line' : ''}}"></view>
+    </view>
+  </view>
+  <view class='comment-box' wx:if='{{currentTab==0}}'>
+    <view class='comment-single' wx:for='{{usercomments}}'>
+      <view class='img-box'>
+        <image class='comment-single-avator' src='{{item.avatar}}'></image>
+      </view>
+      <view class='comment-single-script'>
+        <view class='single-username'>{{item.nickname}}</view>
+        <view class='single-desc'>{{item.comment}}</view>
+      </view>
+    </view>
+  </view>
+<!-- 赞 -->
+  <view class='comment-box' wx:if='{{currentTab==1}}'>
+    <view class='comment-single' wx:for='{{userlikes}}'>
+      <view class='img-box'>
+        <image class='comment-single-avator' src='{{item.avatar}}'></image>
+      </view>
+      <view class='comment-single-script dianzan-script'>
+        <view class='single-username dianzan-username'>{{item.nickname}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='blank'></view>
+  <view class='com-input-box'>
+    <view class='com-input'>
+      <view class='func func-input func-input-left' bindtap='showInputBox'>
+        <icon class='iconfont icon-pinglun'></icon>评论</view>
+      <view class='func func-input'>
+        <icon class='iconfont icon-dianzan {{doLike==0?"":"icon-dianzan-like"}}' bindtap='like' data-id='{{id}}'></icon>赞</view>
+    </view>
+  </view>
+
+  <!-- 评论框 -->
+  <view class='model' wx:if="{{inputBoxShow}}">
+    <!-- invisible_model view 用于点击隐藏model评论框 -->
+    <view class='invisible_model' catchtap='invisible'></view>
+    <view class='input-box'>
+      <textarea class="textarea" placeholder="写评论..." cursor-spacing="{{65}}" show-confirm-bar="{{false}}" adjust-position="{{true}}" auto-focus="{{true}}" maxlength='100' bindinput='textinput'/>
+      <text class='send {{sendValid?"send-valid":""}}' bindtap='send'>发送</text>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,10 @@
+<view class='upload-con'>
+  <form bindsubmit='upload'>
+    <!-- 提交 -->
+    <button class="submitBtn" form-type='submit'>发表</button>
+    <view class="inputView">
+      <textarea class='textarea' placeholder="说点什么吧..." name="textarea" maxlength='30' show-confirm-bar="{{false}}" auto-focus="{{true}}" bindinput='textinput'/>
+    </view>
+    <video id="myVideo" class="video" src="{{videoParams.tempFilePath}}" controls></video>
+  </form>
+</view>

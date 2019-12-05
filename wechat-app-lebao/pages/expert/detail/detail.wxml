@@ -1,0 +1,21 @@
+<!--pages/expert/detail/detail.wxml
+<import src="../../../components/wxParse/wxParse.wxml"/>-->
+<view class="expert-detail">
+  <view class="imgsrc">
+    <image mode='scaleToFill' class='img' src='{{backUrl}}'></image>
+  </view>
+   <view class='text-content'>
+          <view class="expert-name">{{expertName}}</view>
+          <view wx:if="{{description!=''}}" class='content'>
+           <!--<template is="wxParse" data="{{wxParseData:article.nodes}}"/>-->
+            <rich-text  class="rich-text" nodes="{{description}}"></rich-text>
+        </view>
+        <view wx:else>
+        <view class='nodata {{isIphone5?"nodata-i5":""}}'>
+          <icon class='iconfont icon-expert'></icon>
+          <view class='nodata-text'>暂无介绍</view>
+        </view>
+      </view> 
+    </view>
+     
+</view>

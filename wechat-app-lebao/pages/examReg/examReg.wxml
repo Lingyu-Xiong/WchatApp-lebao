@@ -1,0 +1,21 @@
+<!--pages/examReg/examReg.wxml-->
+<view class='exam-content'>
+  <view class='exam-list'>
+    <view class='exam-single' wx:for='{{examList}}' data-id='{{item.id}}' bindtap='toExamDetail'>
+      <view class='script'>
+        <view class='exam-name'>{{item.name}}</view>
+        <view class='exam-time'>
+          <icon class='iconfont icon-nocourse'></icon>发布日期: {{item.addTime}}</view>
+      </view>
+      <view class='viewdetail'>
+        <text>查看</text>
+      </view>
+      <view class='bg-circle-top'></view>
+      <view class='bg-circle-bottom'></view>
+    </view>
+  </view>
+  <view wx:if='{{examList.length==0}}' class='no-data'>
+    <icon class='iconfont icon-notfound'></icon>
+    <view class='no-data-text'>暂无考级报名(￣へ￣) </view>
+  </view>
+</view>

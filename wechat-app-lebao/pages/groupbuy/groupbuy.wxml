@@ -1,0 +1,26 @@
+<view class='groupbuy-con'>
+  <view class='videoselect'>
+    <view class='serve-select'>
+      <icon class='iconfont icon-search'></icon>
+      <input class='selinput' type='text' value='{{inputvideo}}' placeholder='搜索你喜欢的...' placeholder-class='place-holder' bindinput='inputSelect' bindconfirm='search'></input>
+      <icon wx:if='{{inputvideo.length>0}}' class='iconfont icon-close' bindtap='clearSelect'></icon>
+    </view>
+  </view>
+  <!-- search end -->
+  <view class='grouplist'>
+    <view class='group-single' wx:for='{{actList}}'>
+      <view class='pic-box'><image class='course-pic' mode='scaleToFill'  src='{{item.logoUrl}}'></image></view>
+      <view class='course-con'>
+        <view class='con-name'>{{item.name}}</view>
+        <view class='con-bottom'>
+        <view class='act-price'>
+          <view class='discountPrice'>￥{{item.discountPrice}}</view>
+          <view class='originalPrice'>￥{{item.originalPrice}}</view>
+          </view>
+          <view class='join-btn' bindtap='togbcourse' data-id='{{item.id}}' data-objid='{{item.objId}}'>去拼单</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:if='{{actList.length==0}}' class='nodata'>暂无活动</view>
+</view>

@@ -1,0 +1,15 @@
+<!--pages/my/setting/setting.wxml-->
+<view class='content'>
+  <view class='content {{isIphone5?"content-i5":""}}'>
+    <view class='blank'></view>
+    <view class='list'>
+      <view wx:for='{{infroList}}' class='single-list' data-event='{{item.event}}' bindtap='reset'>
+        <text>{{item.infro}}</text><span wx:if='{{item.event=="goToPersoninfo"&&reddot}}' class='reddot in-reddot'>•</span>
+        <icon class='iconfont icon-go'></icon>
+        <text class='detail'>{{item.detail}}</text>
+      </view>
+    </view>
+    <!-- <button class='logout' style='margin-top:{{marTop}}px' bindtap='logout'>退出登录</button> -->
+    <view class='blank'></view>
+  </view>
+</view>

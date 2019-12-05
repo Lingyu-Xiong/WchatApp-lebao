@@ -1,0 +1,35 @@
+<!--pages/questionBank/learnMore/learnMore.wxml-->
+<view class='content'>
+  <view class='header'>
+    <scroll-view scroll-x="true" class="scroll" >
+      <!--  display: inline-block-->
+      
+        <view wx:for='{{categoryList}}' wx:key='*this' data-categoryId='{{item.categoryId}}' data-current="{{index}}"  bindtap='switchNav' class="item-card {{currentTab==index ? 'active' : ''}}">
+        {{item.title}}
+        </view>
+    
+    </scroll-view>
+    <view class="line"></view>
+  </view>
+<view class='main'>
+  <scroll-view class='main-scroll' scroll-y style="height: 100%" bindscrolltolower="searchScrollLower">
+  <view class="questionList" wx:if='{{questionList.length!=0}}'>
+    <view class='question' wx:for='{{questionList}}' data-id='item.id' wx:key='*this' wx:for-index="quesIndex">
+    {{quesIndex+1}}、{{item.question}}
+      <view class='answerList' data-quesid='{{item.id}}' data-index='{{quesIndex}}' wx:for-item="question"  wx:for='{{item.questionItems}}' wx:key='*this' data-ansid='{{question.id}}' bindtap='select'>
+       <view class="{{question.isTrue==1?'index-1':'index'}}" ><text>{{question.identityId}}</text></view>
+        <view class="{{question.isTrue==1?'answer-1':'answer'}}">{{question.answer}}</view>
+       
+      </view>
+       <view class='analysis-title1'>答题解析：</view>
+      <view class='analysis-detail'>{{item.analysis}}</view>
+    </view>
+  </view>
+  <view wx:else class='nodata'>
+     <view class='nodata-text'>暂无题目</view>
+  </view>
+  <view class="loading" hidden="{{!searchLoading}}">正在载入更多...</view>  
+   <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view>  
+</scroll-view>
+</view>
+</view>

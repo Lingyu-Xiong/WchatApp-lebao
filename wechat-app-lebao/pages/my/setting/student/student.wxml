@@ -1,0 +1,14 @@
+<!--pages/my/setting/student/student.wxml-->
+<view class='stu-content'>
+  <view class='sign-up-top' bindtap='adddetail'>新增学员</view>
+    <view  class='student-list' wx:key='*this' wx:for='{{studentList}}' data-id='{{item.name}}'>
+      <view class='single-list'>
+        <view class='text'>学员姓名：{{item.name}}</view>
+        <view class='text'>学员编号：{{item.id}}
+          <icon class='iconfont icon-deletestu div-icon' bindtap='delstudent' data-id='{{item.id}}'></icon>
+        </view>
+        <view class='text'>手机号码：{{item.mobile}}</view>
+      </view>
+    </view>
+  
+</view>

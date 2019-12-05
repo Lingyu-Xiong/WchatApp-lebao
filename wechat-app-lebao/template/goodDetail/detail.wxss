@@ -1,0 +1,55 @@
+/* template/detail/detail.wxss */
+.no-data{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.icon-no-record{
+  color: #466466;
+  font-size: 70px;
+  line-height: 90px;
+}
+.no-data-text{
+  color: #466466;
+  font-size: 16px;
+  line-height: 20px;
+}
+.temp-one{
+  width: 90%;
+  height: 50px;
+  margin-left: 5%;
+  margin-top: 8px;
+  border: 0.5px #e9e9e9 solid;
+  border-radius: 10rpx;
+}
+.temp-left{
+  width: calc(70% - 8px);
+  height: 100%;
+  float: left;
+  color: #466466;
+  padding-left: 8px;
+}
+.temp-left text{
+  display: block;
+}
+.temp-name{
+  font-size: 14px;
+  line-height: 30px;
+}
+.temp-time{
+  font-size: 10px;
+  line-height: 20px;
+}
+.temp-right{
+  width: calc(30% - 8px);
+  height: 100%;
+  float: right;
+  color: #466466;
+  padding-right: 8px;
+  font-size: 16px;
+  line-height: 50px;
+  text-align: right;
+}

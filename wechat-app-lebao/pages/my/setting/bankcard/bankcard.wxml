@@ -1,0 +1,28 @@
+<!--pages/my/setting/bankcard/bankcard.wxml-->
+<view class='content' style='height:{{contentHeight}}px'>
+  <view class='description'>已关联
+    <view class='addcard' bindtap='add'>添加
+      <icon class='iconfont icon-add'></icon>
+    </view>
+  </view>
+  <scroll-view class='list' scroll-y>
+    <view wx:if='{{cardList.length==0}}' class='no-data'>
+      <icon class='iconfont icon-notfound'></icon>
+      <view class='no-data-text'>
+        <text>您还没有关联银行卡\n\n请点击添加进行关联</text>
+      </view>
+    </view>
+    <view wx:for='{{cardList}}' class='card {{isIphone5?"card-i5":""}}' data-index='{{index}}' data-id='{{item.id}}' bindtap='open'>
+      <view class='card-detail'>
+        <view class='bank-text {{isIphone5?"bank-text-i5":""}}'>
+          <image class='listpic' mode='aspectFit' src='{{item.picUrl}}'></image>
+          <text>{{item.name}}( {{item.abbr}} )</text>
+        </view>
+        <view class='bank-type {{isIphone5?"bank-type-i5":""}}'>{{item.type}}</view>
+      </view>
+      <view wx:if='{{item.isDefault}}' class='card-default {{isIphone5?"card-default-i5":""}}'>默认</view>
+    </view>
+  </scroll-view>
+</view>
+<i-action-sheet visible="{{visible}}" actions="{{actions}}" bindtap='handleCancel' show-cancel bind:cancel="handleCancel" bind:click="handleClickItem" mask-closable="{{false}}">
+</i-action-sheet>

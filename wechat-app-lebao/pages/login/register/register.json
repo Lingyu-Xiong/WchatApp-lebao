@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "完善用户信息",
+  "usingComponents": {
+    "getcode": "/components/getCode/getCode"
+  }
+}

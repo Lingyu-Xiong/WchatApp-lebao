@@ -1,0 +1,96 @@
+<!--pages/my/order/details/details.wxml-->
+<view class='content {{isIphone5?"content-i5":""}} desc'>
+  <view class='blank'></view>
+  <view class='status'>{{statusText}}</view>
+  <view class='part' wx:if='{{isStore}}'>
+    <view class='pic'>
+      <image mode='aspectFill' src='{{picUrl}}'></image>
+    </view>
+    <view class='goods'>
+      <text class='name'>{{orgName}}</text>
+      <text>订单编号：{{orderSn}}</text>
+      <text>电话号码：{{phone}}</text>
+    </view>     
+  </view>
+  <view class='part' wx:else>
+    <view class='pic'>
+      <image mode='aspectFill' src='{{objLogo}}'></image>
+    </view>
+    <view class='goods'>
+      <text class='name'>{{objName}}</text>
+      <text>订单编号：{{orderSn}}</text>
+      <text>电话号码：{{phone}}</text>
+    </view>     
+  </view>
+  <view wx:if='{{isStore}}' class='orderprice'>{{price}}宝宝币</view>
+  <view wx:else class='orderprice'>￥{{price}}</view>
+  <view class='blank'></view>
+</view>
+<view class='content {{isIphone5?"content-i5":""}}'>
+  <view class='message desc'>
+    <view class='course-desc'>
+      <block wx:if='{{isStore}}'>
+        <icon class='iconfont icon-course-desc div-icon'></icon> 商品信息
+      </block>
+      <block wx:else>
+        <icon class='iconfont icon-course-desc div-icon'></icon> 学校信息
+      </block>
+    </view>
+    <view wx:if='{{isStore}}' class='message'>商家名称：{{orgName}}</view>
+    <view wx:else class='message'>学校名称：{{orgName}}</view>
+    <view class='message'>门店地址：
+      <icon class='iconfont icon-address'></icon>{{address}}</view>
+  </view>
+  <view class='message desc' wx:if='{{!isStore}}'>
+    <view class='course-desc'>
+      <icon class='iconfont icon-tianjia div-icon'></icon> 学员信息
+    </view>
+    <view class='message single'>学员姓名：<span wx:for='{{student}}'>{{item.stuName}}\t</span></view>
+
+  </view>
+  <view class='message desc'>
+    <view class='course-desc'>
+      <icon class='iconfont icon-pay div-icon'></icon> 支付详情
+    </view>
+    <view class='message single'>订单编号：{{orderSn}}</view>
+    <view class='message single'>手机号码：{{phone}}</view>
+    <view class='message single'>下单时间：{{addTime}}</view>
+    <view wx:if='{{isStore}}' class='message single'>支付宝宝币：{{price}}</view>
+    <view wx:else class='message single'>支付金额：{{price}}</view>
+  </view>
+  
+  <view class='order-event'>
+    <view wx:if='{{status==0}}' class='order-btn first-import' data-order-sn='{{orderSn}}' catchtap='showModal' data-price='{{price}}'>支付</view>
+    <view wx:if='{{status==0}}' data-order-sn='{{orderSn}}' class='order-btn' catchtap='cancel'>取消订单</view>
+    <view wx:if='{{status==1}}' class='order-btn' data-order-sn='{{orderSn}}' catchtap='applyRefund'>申请退款</view>
+    <view wx:if='{{status==4}}' data-order-sn='{{orderSn}}'></view>
+    <!-- <view wx:if='{{status==1||status==4}}' class='order-btn' bindtap='evaluate'>评价</view> -->
+    <view wx:if='{{status==2}}' class='order-btn didabled' data-order-sn='{{orderSn}}' catchtap='refundDetail'>退款中</view>
+    <view wx:if='{{item.status==2}}' class='order-btn' data-order-sn='{{orderSn}}' catchtap='cancelRefund'>取消退款</view>
+  </view>
+  <view class='blank'></view>
+</view>
+
+<!-- 输入支付密码 -->
+<view class="modals modals-bottom-dialog" wx:if="{{showModal}}" catchtouchmove="ture">
+  <view class="modals-cancel" bindtap="hideModal"></view>
+  <view class="bottom-dialog-body bottom-pos" animation="{{animationData}}">
+    <view class='close'>
+      <icon class='iconfont icon-close'></icon>
+    </view>
+    <view class='orderSn'>订单编号-{{orderSn}}</view>
+    <view class='money'>￥{{price}}</view>
+    <view class='input'>
+      <view wx:for='{{password}}' class='input-box'>
+        <view wx:if='{{item.hasValue}}' class='dot'></view>
+      </view>
+    </view>
+    <view class='keyboard'>
+      <view wx:for='{{keyboard}}' class='key' data-value='{{item.value}}' bindtap='getPassword'>{{item.key}}</view>
+      <view class='key' bindtap='deletePassword'>
+        <icon class='iconfont icon-delete'></icon>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 输入支付密码 -->

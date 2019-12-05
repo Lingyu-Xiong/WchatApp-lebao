@@ -1,0 +1,49 @@
+<view class='video-con'>
+  <view class='video-box'>
+    <view class='video-title'>
+       <view class='myvideo-update-time'>{{status}}</view>
+        <view class='update-time'>{{addTime}}</view>
+    </view>
+    <view class='feedback'>{{feedback}}</view>
+    <video id="myVideo" class="video" src="{{url}}" controls></video>
+    <view class='video-desc'>{{description}}</view>
+     <view class='video-expert' wx:for='{{expcomments}}'>
+      {{item.userName}}:{{item.comment}}
+    </view>
+  </view>
+  <view class='video-bottom video-bottom-detail'>
+    <view class='func func-detail {{currentTab==0 ? "func-detail-active" : ""}}' bindtap="switchNav" data-current="0">
+      评论
+      <text>{{comment}}</text>
+      <view class="{{currentTab==0 ? 'under-line' : ''}}"></view>
+    </view>
+    <view class='func func-detail {{currentTab==1 ? "func-detail-active" : ""}}' bindtap="switchNav" data-current="1">
+      赞
+      <text>{{like}}</text>
+      <view class="{{currentTab==1 ? 'under-line' : ''}}"></view>
+    </view>
+  </view>
+  <view class='comment-box' wx:if='{{currentTab==0}}'>
+    <view class='comment-single' wx:for='{{usercomments}}'>
+      <view class='img-box'>
+        <image class='comment-single-avator' src='{{item.avatar}}'></image>
+      </view>
+      <view class='comment-single-script'>
+        <view class='single-username'>{{item.nickname}}</view>
+        <view class='single-desc'>{{item.comment}}</view>
+      </view>
+    </view>
+  </view>
+<!-- 赞 -->
+  <view class='comment-box' wx:if='{{currentTab==1}}'>
+    <view class='comment-single' wx:for='{{userlikes}}'>
+      <view class='img-box'>
+        <image class='comment-single-avator' src='{{item.avatar}}'></image>
+      </view>
+      <view class='comment-single-script dianzan-script'>
+        <view class='single-username dianzan-username'>{{item.nickname}}</view>
+      </view>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,80 @@
+/* template/detail/detail.wxss */
+.no-data{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.icon-no-record{
+  color: #466466;
+  font-size: 70px;
+  line-height: 90px;
+}
+.no-data-text{
+  color: #466466;
+  font-size: 16px;
+  line-height: 20px;
+}
+.temp-one{
+  width: 90%;
+  height: 50px;
+  margin-top: 8px;
+}
+.temp-left{
+  width: calc(40% - 8px);
+  height: 100%;
+  float: left;
+  color: #466466;
+  padding-left: 4px;
+  font-size: 14px;
+  padding-right:4px;
+}
+.temp-flow{
+  float:left;
+
+}
+.temp-mid{
+  height: 100%;
+  float: left;
+  color: #466466;
+  padding-left: 8px;
+}
+.temp-left text{
+  display: block;
+  text-align:right;
+}
+.temp-name{
+  font-size: 14px;
+  line-height: 30px;
+}
+.temp-date{
+  font-size:20px;
+  color: #0f2148;
+}
+.temp-time{
+  font-size: 10px;
+  line-height: 20px;
+  color: #b6b6b6;
+}
+.temp-right{
+  height: 100%;
+  float: right;
+  color: #466466;
+  padding-right: 8px;
+  font-size: 14px;
+  text-align: right;
+}
+.temp-line{
+  width:1px;
+  background-color:#e6e6e6;
+  height:50px;
+  margin-left:4px;
+}
+.temp-circle{
+  width:8px;
+  height:8px;
+  border-radius:4px;
+  background-color:#e6e6e6;
+}

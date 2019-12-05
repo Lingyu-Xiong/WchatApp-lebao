@@ -1,0 +1,15 @@
+<!--pages/my/serve/volrec/volrec.wxml-->
+<view class='sign-con'>
+<view wx:if='{{signList.length==0}}' class='no-data'>
+    <icon class='iconfont icon-notfound'></icon>
+    <view class='no-data-text'>暂无打卡记录 (￣へ￣) </view>
+  </view>
+<view class="sign-list">
+  <view class="single-list" wx:for='{{signList}}'>
+    <view class="label"><icon class='iconfont icon-course-desc div-icon'></icon>学校名称</view>
+    <view class="schoolname">{{item.schoolName}}</view>
+     <view class="label"><icon class='iconfont icon-shizhong div-icon'></icon>打卡时间</view>
+    <view class="schoolname">{{item.clockTime}}</view>
+  </view>
+</view>
+</view>

@@ -1,0 +1,18 @@
+<!--pages/login/register/register.wxml-->
+<image class='cover' src='../../../images/login/loginbg.png'></image>
+<view class='title'>乐宝科技</view>
+<view class='title-decsript'></view>
+<view class='btn border first-input {{phone_valid}}'>
+  <input class='input' value='{{phone}}' type='number' bindinput='inputPhone' maxlength='11' placeholder='请输入手机号' placeholder-class="place-holder">
+  </input>
+  <icon wx:if='{{phone.length>0}}' class='iconfont icon-close' bindtap='clearPhone'></icon>
+</view>
+<view class='btn'>
+  <getcode phoneInfo='{{modifyPhone}}' url='{{url}}' bind:getcode='getCode' background-color='transparent' border='1rpx #ffffff solid' btn-color='#ffffff' input-color='#ffffff' place-holder-color='ffffff' is-transparent='1' value="{{code}}"></getcode>
+</view>
+<button class='btn login' bindtap='register' open-type="getUserInfo" bindgetuserinfo="getUserInfo">绑 定</button>
+<view class="right-bottom">
+    <button open-type='contact' class='chat'>
+      客服
+    </button>
+  </view>

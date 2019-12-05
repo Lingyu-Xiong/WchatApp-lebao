@@ -1,0 +1,70 @@
+<!--pages/confirmOrder/confirmOrder.wxml-->
+<view class='create-content'>
+  <view class='blank'></view>
+  <view class='body'>
+    <view class='bodycontent'>
+      <view class='body-content'>
+        <view class='course-name'>{{courseinfo.courseName}}</view>
+        <view class='blank'></view>
+      </view>
+      <view class='body-content'>
+        <view class='text'>￥{{courseinfo.goodsPrice}}元</view>
+        <view class='text'>
+          <icon class='iconfont icon-address info-icon'></icon>{{courseinfo.address}}</view>
+        <view class='text'>
+          <icon class='iconfont icon-nocourse info-icon'></icon>{{courseinfo.classTime}}</view>
+        <view class='blank'></view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='create-content'>
+  <view class='message desc'>
+    <view class='course-desc'>
+      <icon class='iconfont icon-discount div-icon'></icon> 优惠信息
+    </view>
+    <view class='message'>本次消费获得宝宝币
+      <text>{{courseinfo.goodsPrice}}</text>
+    </view>
+  </view>
+</view>
+<!-- <view class='sign-up-blank'></view> -->
+<!-- <view class='student-content'>
+  <view class='student-list'>
+    <view wx:for='{{addstudentList}}' class='slist'>
+      <text>{{item.name}}</text>
+      <text>{{item.mobile}}</text>
+    </view>
+  </view>
+
+</view> -->
+<view class='card stu-card' wx:if='{{selectstu.name}}'>
+  <view class='name'>学员信息
+    <icon class='iconfont icon-cha icon-del' bindtap='studelete'></icon>
+  </view>
+  <view class='tag'>
+    <view class='tag-info'>
+      <view class='price-lable'>学员姓名：</view>
+      <view class='price-num nored'>{{selectstu.name}}</view>
+    </view>
+    <view class='tag-info'>
+      <view class='price-lable'>学员编号：</view>
+      <view class='price-num nored'>{{selectstu.id}}</view>
+    </view>
+  </view>
+</view>
+<view class='addstudent' bindtap='addstudent' wx:if='{{addshow}}'>
+  <icon class='iconfont icon-tianjia add-icon'></icon>添加学员</view>
+<!--<view class='addstudent addtime'> <input type='text' placeholder='请输入您想要预约的上课时间' bindinput='getTime'></input></view>-->
+
+
+<view class='sign-up '>
+  <view class='left '>
+    <view class='total '>总额：
+      <text>￥{{courseinfo.goodsPrice}}</text>
+    </view>
+  </view>
+  <view class='right ' bindtap='signUp'>
+    提交订单
+  </view>
+</view>

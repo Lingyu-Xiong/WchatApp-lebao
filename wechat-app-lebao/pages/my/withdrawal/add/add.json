@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "添加银行卡",
+  "usingComponents": {
+    "Select": "/components/select/select"
+  }
+}

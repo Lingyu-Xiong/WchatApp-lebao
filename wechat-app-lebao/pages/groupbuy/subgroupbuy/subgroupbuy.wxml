@@ -1,0 +1,15 @@
+<view class='groupbuy-con'>
+  <view class='grouplist'>
+    <view class='group-single'  wx:for='{{subactList}}'>
+      <view class='pic-box'><image class='course-pic' mode='scaleToFill'  src='https://www.lebao108.com/images/weixin/1.png'></image></view>
+      <view class='course-con'>
+        <view class='con-name'>{{item.name}}</view>
+        <view class='con-bottom'>
+          <view class='discountPrice'>￥{{item.discountPrice}}</view>
+          <view class='originalPrice'>￥{{item.originalPrice}}</view>
+          <view class='join-btn' bindtap='gbconfirmOrder' data-id='{{item.id}}' data-price='{{item.discountPrice}}'>去拼单</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

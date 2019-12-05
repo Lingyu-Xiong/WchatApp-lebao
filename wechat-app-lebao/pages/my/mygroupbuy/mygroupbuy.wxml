@@ -1,0 +1,42 @@
+<view class='mygroupbuy-con'>
+  <view class='order-type gborder'>
+    <view class='order-type-single {{orderType==0?"order-active":""}}' bindtap='switchType' data-type='0'>我的开团</view>
+    <view class='order-type-single {{orderType==1?"order-active":""}}' bindtap='switchType' data-type='1'>我的拼团</view>
+  </view>
+  <view class='mygb-top'>
+    <view class="item-list" wx:for="{{itemlist}}">
+      <view class='item-text {{currentTab==index ? "item-text-active" : ""}}' bindtap="switchNav" data-current="{{index}}">{{item.name}}</view>
+      <view class="{{currentTab==index ? 'under-line' : ''}}"></view>
+    </view>
+  </view>
+  <!-- 列表 -->
+  <view class='gborder-content'>
+    <view class='gborder-list'>
+      <view class='gborder-single' wx:for='{{mygbList}}' bindtap='gborderdetail' data-orderid='{{item.orderId}}'>
+        <view class='gborder-info'>
+          <view class='gborder-logo-box'>
+            <image mode='scaleToFill' class='gborder-logo' src='{{item.actLogoUrl}}'></image>
+          </view>
+          <view class='gborder-right'>
+            <view class='actname'>{{item.actName}}</view>
+            <view class='act-price'>
+              <view class='discountPrice'>￥{{item.discountPrice}}</view>
+              <view class='originalPrice'>￥{{item.originalPrice}}</view>
+            </view>
+          </view>
+        </view>
+        <view class='buy-price' wx:if='{{item.status!=0}}'>实付：￥{{item.discountPrice}}</view>
+        <view class='status-btn-0' wx:if='{{item.status==0}}' data-id='{{item.id}}'>未付款</view>
+        <view class='status-btn-0' wx:if='{{item.status==2}}' data-id='{{item.id}}'>支付失败</view>
+        <view class='status-btn-0' wx:if='{{item.status==5}}' data-id='{{item.id}}'>已取消</view>
+        <view class='status-btn-1' wx:if='{{item.status==3}}' catchtap='togbdetail' data-id='{{item.id}}'>拼单成功</view>
+        <view class='status-btn-2' wx:if='{{item.status==4}}' catchtap='togbdetail' data-id='{{item.id}}'>拼单失败</view>
+        <view class='status-btn-3' wx:if='{{item.status==1}}' catchtap='togbdetail' data-id='{{item.id}}'>邀请好友拼单</view>
+      </view>
+    </view>
+  </view>
+  <!-- 暂无订单 -->
+  <view class='nodata' wx:if='{{mygbList.length==0}}'>
+    暂无团购
+  </view>
+</view>

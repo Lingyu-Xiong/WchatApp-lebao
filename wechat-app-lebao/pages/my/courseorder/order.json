@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "订单中心",
+  "usingComponents": {
+    "Select": "/components/select/select"
+  }
+}

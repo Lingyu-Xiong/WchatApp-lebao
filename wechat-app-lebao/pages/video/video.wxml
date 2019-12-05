@@ -1,0 +1,66 @@
+<!--pages/video/video.wxml-->
+<view class='video-top'>
+  <view class='scroll-box'>
+    <scroll-view scroll-x style="width: auto;overflow:hidden;">
+      <view class="item-list" wx:for="{{itemlist}}">
+        <view class='item-text {{currentTab==index ? "item-text-active" : ""}}' bindtap="switchNav" data-current="{{index}}">{{item.name}}</view>
+        <view class="{{currentTab==index ? 'under-line' : ''}}"></view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class='videoselect'>
+    <view class='serve-select'>
+      <icon class='iconfont icon-search'></icon>
+      <input class='selinput' type='text' value='{{inputvideo}}' placeholder='搜索视频' placeholder-class='place-holder' bindinput='inputSelect' bindconfirm='search'></input>
+      <icon wx:if='{{inputvideo.length>0}}' class='iconfont icon-close' bindtap='clearSelect'></icon>
+    </view>
+    <icon class='iconfont icon-camera' bindtap='choosevideo'></icon>
+  </view>
+</view>
+<view class='videoList-top-blank'></view>
+<view wx:if='{{videoList.length!==0}}'>
+
+  <view class='myvideo-mask' wx:if="{{maskShow}}">
+    <view class='invisible_model' catchtap='invisible'></view>
+    <view class='push-select'>
+      <view class='select-single local' bindtap='localUpload'>从本地上传(不超过30s)</view>
+      <view class='select-single' bindtap='shootUpload'>拍摄视频(不超过30s)</view>
+    </view>
+  </view>
+  <view class='video-con'>
+    <view wx:for='{{videoList}}'>
+      <view class='video-box'>
+        <view class='video-title' bindtap='videodetail' data-id='{{item.id}}'>
+          <view class='userimg-box'>
+            <image class='user-avtor' src='{{item.avatar}}'></image>
+          </view>
+          <view class='name-time'>
+            <view class='user-name'>{{item.nickname}}</view>
+            <view class='update-time'>{{item.addTime}}</view>
+          </view>
+        </view>
+        <video data-id='{{item.id}}' id="video{{item.id}}" class="video" src="{{item.url}}" bindtap='videoPlay' controls></video>
+        <view bindtap='videodetail' data-id='{{item.id}}'>
+          <view class='video-desc'>{{item.description}}</view>
+          <view wx:if='{{item.comments}}' class='expertList'>
+            <view class='video-expert' wx:for='{{item.comments}}'>
+              {{item.userName}}:{{item.comment}}
+            </view>
+          </view>
+        </view>
+        <view class='video-bottom'>
+          <view class='func' bindtap='videodetail' data-id='{{item.id}}'>
+            <icon class='iconfont icon-liulan'></icon>{{item.visitNum}}</view>
+          <view class='func' bindtap='videodetail' data-id='{{item.id}}'>
+            <icon class='iconfont icon-pinglun'></icon>{{item.comment}}</view>
+          <view class='func {{item.doLike==0?"":"icon-dianzan-like"}}'>
+            <icon class='iconfont icon-dianzan' bindtap='like' data-id='{{item.id}}'></icon>{{item.like}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:else class='no-data'>
+  <icon class='iconfont icon-notfound'></icon>
+  <view class='no-data-text'>暂无视频 (￣へ￣) </view>
+</view>

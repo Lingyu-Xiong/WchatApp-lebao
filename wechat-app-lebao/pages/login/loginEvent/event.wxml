@@ -1,0 +1,30 @@
+<!--pages/login/loginEvent/event.wxml-->
+<image class='cover' src='../../../images/login/loginbg.png'></image>
+<view class='title'>乐宝科技</view>
+<view class='title-decsript'></view>
+<view wx:if='{{event==1}}'>
+  <view class='btn border first-input {{phone_valid}}'>
+    <input class='input' value='{{phone}}' type='number' bindinput='inputPhone' maxlength='11' placeholder='请输入手机号' placeholder-class="place-holder">
+    </input>
+    <icon wx:if='{{phone.length>0}}' class='iconfont icon-close' bindtap='clearPhone'></icon>
+  </view>
+  <view class='btn'>
+    <getcode phoneInfo='{{modifyPhone}}' url='{{url}}' bind:getcode='getCode' background-color='transparent' border='1rpx #ffffff solid' btn-color='#ffffff' input-color='#ffffff' place-holder-color='ffffff' is-transparent='1'></getcode>
+  </view>
+</view>
+<view wx:else>
+  <view class='btn border first-input {{password_valid}}'>
+    <input class='input' value='{{password}}' type='text' bindinput='inputPassword' maxlength='20' cursor='28' placeholder='请输入新密码' placeholder-class="place-holder">
+    </input>
+    <icon wx:if='{{password.length>0}}' class='iconfont icon-close' bindtap='clearPasswprd'></icon>
+  </view>
+  <view class='btn border {{ensurepassword_valid}}'>
+    <input class='input' value='{{ensurepassword}}' type='text' bindinput='inputEnsurePassword' maxlength='20' cursor='28' placeholder='请输入确认密码' placeholder-class="place-holder">
+    </input>
+    <icon wx:if='{{ensurepassword.length>0}}' class='iconfont icon-close' bindtap='clearEnsurePassword'></icon>
+  </view>
+</view>
+<button class='btn login' bindtap='{{buttonEvent}}'>{{buttonText}}</button>
+<view class='events'>
+  <view class='event' bindtap='back'>返回登录</view>
+</view>

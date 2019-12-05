@@ -1,0 +1,18 @@
+<!--pages/my/expert/expert.wxml-->
+<view class='expert-content'>
+<view class='search'>
+    <icon class='iconfont icon-search'></icon>
+    <view class='search-input' value='{{search}}' type='text' bindtap='search'></view>
+  </view>
+<view class='expert-single' wx:for='{{expertList}}' wx:key='*this' data-id='{{item.id}}'bindtap='goToExpertDetail'>
+    <image class='expert-item-pic' mode='scaleToFill' src='{{item.pictureUrl}}'></image>
+    <view class='text-content'>
+     <view class="expert-name">{{item.name}}</view>
+     <view class="expert-filed">擅长领域：{{item.field}}</view>
+     <view class="expert-introduction">简介：{{item.briefIntroduction}}</view>
+     <view class="expert-follow">XX人关注</view>
+    </view>
+  </view>
+  
+
+ </view>

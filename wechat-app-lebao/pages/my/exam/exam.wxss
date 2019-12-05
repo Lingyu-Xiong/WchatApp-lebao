@@ -1,0 +1,7 @@
+@import'../../examReg/examReg';
+.nopay{
+  background-color: #ffc56f;
+}
+.nopaytxt{
+color:#975a00;
+}

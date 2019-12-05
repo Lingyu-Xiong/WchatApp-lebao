@@ -1,0 +1,55 @@
+/* pages/my/withdrawal/withdrawal.wxss */
+@import "../person.wxss";
+
+page{
+  background-color: #ffffff;
+}
+.banner {
+  display: inline-block;
+  text-align: center;
+  border: none;
+}
+
+.banner .details {
+  position: absolute;
+  top: 20px;
+  right: 5%;
+  color: #25aab1;
+  padding-right: 14px;
+}
+
+.money {
+  margin-top: 24px;
+}
+
+.tip {
+  margin-top: 8px;
+  color: #466466;
+  font-size: 12px;
+}
+
+.tip text {
+  margin-left: 30px;
+  color: #25aab1;
+}
+
+.center {
+  text-align: center;
+}
+
+.prompt{
+  color:#25aab1;
+  font-size:14px;
+  text-align: center;
+}
+.icon-close{
+  font-size: 26px;
+  line-height: 64px;
+  color: #466466;
+  padding-right: 8px;
+  width: 30px;
+  text-align: right
+}
+.input-money{
+  width: calc(100% - 105px);
+}

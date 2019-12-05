@@ -1,0 +1,76 @@
+page{
+  
+  height:100%;
+}
+.card{
+background-color:#fff;
+border-radius: 8px;
+ box-shadow: 0 3px 18px #d0d0d0;
+}
+.stu-card{
+  margin-top:10px;
+}
+.confirm-con{
+  padding:15px;
+}
+.name{
+  font-size:18px;
+  color:#466466;
+  text-align: center;
+  padding:15px 10px;
+  border-bottom: 1px #eee solid;
+}
+.tag{
+ padding:10px 15px 0;
+}
+.tag-info{
+  font-size:16px;
+  display:flex;
+  flex-direction: row;
+ padding-bottom:10px;
+}
+.price-lable{
+  color:#808080;
+
+}
+.price-num{
+  color:#e61919;
+  margin-left:10px;
+}
+.nored{
+  color:#464646;
+}
+.addstu{
+  text-align: center;
+  margin:20px 0;
+  color:#808080;
+}
+.add-icon{
+  margin-right:5px;
+}
+.confirm-btn{
+  position:fixed;
+  bottom:10px;
+  width:80%;
+  height:40px;
+  line-height:40px;
+  border-radius: 20px;
+  background-color:#25aab1;
+  color:#fff;
+  margin-left:8%;
+  text-align: center;
+}
+.icon-del{
+  position:absolute;
+  margin-left:26%;
+  font-size: 18px;
+  color:#808080;
+}
+.bg-img{
+  width:70px;
+  height:70px;
+  position:absolute;
+  left:75%;
+  top:100px;
+
+}

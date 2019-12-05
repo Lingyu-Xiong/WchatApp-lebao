@@ -1,0 +1,23 @@
+<!--pages/my/charge/charge.wxml-->
+<view class='banner'>
+  <text class='details' bindtap='goTodetails'>明细</text>
+</view>
+<view class='content {{isIphone5?"content-i5":""}}'>
+  <view class='description'>充值金额</view>
+  <view class='money'>
+    <icon class='iconfont icon-money'></icon>
+    <input class='input-money' value='{{money}}' type='digit' bindinput='inputMoney' maxlength='10'>
+    </input>
+    <icon wx:if='{{money.length>0}}' class='iconfont icon-close' bindtap='clearMoney'></icon>
+  </view>
+  <view class='description second'>充值方式</view>
+  <view class='list'>
+    <view class='single-list'>
+      <icon class='iconfont icon-wxpay'></icon>
+      <text>微信支付</text>
+      <icon wx:if='{{isSelected}}' class='iconfont icon-selected'></icon>
+    </view>
+  </view>
+  <button class='person-btn' bindtap='charge'>充值</button>
+  <view class='blank'></view>
+</view>

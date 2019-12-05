@@ -1,0 +1,16 @@
+/* pages/login/register/register.wxss */
+@import "../login.wxss";
+.title{
+  margin-top: 84px;
+}
+.events{
+  margin-top: 20px;
+}
+.line{
+  float: left;
+  margin-top: 14px;
+}
+.getcode{
+  width: 280px;
+  height: 80px;
+}

@@ -1,0 +1,9 @@
+<!--pages/videoCourse/video/video.wxml-->
+    <video id="myVideo" class="video" src="{{url}}" controls="true" poster="{{cover}}">
+    </video>
+    <view class='intro'>
+      课程介绍:
+    </view>
+    <view  class="rich-text">
+      <rich-text nodes="{{remark}}"></rich-text>
+    </view>

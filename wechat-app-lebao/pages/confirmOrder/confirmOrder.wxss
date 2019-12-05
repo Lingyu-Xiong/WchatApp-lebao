@@ -1,0 +1,209 @@
+/* pages/createOrder/create.wxss */
+@import '../school/details/details.wxss';
+@import '/css/modal.wxss';
+@import'../examReg/confirmsign/confirmsign.wxss';
+page{
+  background-color: #ffffff;
+}
+.create-content{
+  background-color: #ffffff;
+  padding-top: 10px;
+}
+.desc{
+  padding: 10px 0;
+}
+.course-name {
+  font-size: 22px;
+  font-weight: bold;
+  color: #25aab1;
+  margin-top: 8px;
+}
+
+.body-content .text {
+  line-height: 24px;
+}
+
+.icon-phone {
+  font-size: 15px;
+  line-height: 18px;
+  color: #25aab1;
+  position: relative;
+  margin-top: -10px;
+}
+
+.dive {
+  width: calc(100% - 32px);
+  margin-left: 16px;
+}
+
+.div text {
+  display: block;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.div-icon {
+  color: #466466;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.course-desc {
+  font-size: 16px;
+  color: #466466;
+  line-height: 20px;
+  padding-bottom: 8px;
+}
+
+.teacher-pic {
+  width: 80%;
+  height: 150px;
+  margin-top: 12px;
+  margin-left: 10%;
+  border: 0.5px #e9e9e9 solid;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.teacher-pic-i5 {
+  height: 120px;
+}
+
+.teacher-pic image {
+  width: 25%;
+  height: 60%;
+}
+
+.sign-up-blank {
+  width: 100%;
+  height: 40px;
+}
+.left {
+  width: 50px;
+  height: 70px;
+  float: left;
+}
+
+.right {
+  width: 100%;
+  height: 70px;
+  float: right;
+}
+.sign-up {
+  width: 100%;
+  height: 48px;
+  border-style: solid none none none;
+  border-width: 0.5px;
+  border-color: #e9e9e9;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+}
+
+.sign-up .left {
+  width: calc(100% - 120px);
+  height: 100%;
+}
+
+.sign-up .right {
+  width: 120px;
+  height: 100%;
+  line-height: 48px;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 8px;
+  color: #fff;
+  text-align: center;
+  background-color: #25aab1;
+}
+
+.total {
+  color: #466466;
+  font-size: 12px;
+  padding-left: 12px;
+  margin-top: 4px;
+}
+
+.total text {
+  color: #25aab1;
+  font-size: 20px;
+}
+
+.personNum {
+  color: #466466;
+  font-size: 10px;
+  padding-left: 12px;
+}
+.btn {
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  line-height: 40px;
+  text-align: center;
+  width: 50%;
+  height: 100%;
+}
+
+.cancle {
+  float: left;
+  color: #25aab1;
+}
+
+.ensure {
+  float: right;
+  color: #fff;
+  background-color: #25aab1;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.message {
+  width: calc(100% - 32px);
+  margin-left: 16px;
+}
+
+.message text {
+  width: 50%;
+  display: inline-block;
+  text-align: right;
+}
+.student-content{
+   border-style: solid none solid none;
+  border-width: 0.5px;
+  border-color: #e9e9e9;
+  padding:10px 20px;
+}
+.addstudent{
+  text-align: center;
+  color:#25aab1;
+  border-style: none none solid none;
+  border-width: 0.5px;
+  border-color: #e9e9e9;
+  padding:10px 20px;
+}
+.addtime{
+  color:#466466;
+}
+.input-placeholder{
+  color:#aaaaaa;
+}
+.add-icon{
+   font-size: 18px;
+  line-height: 20px;
+  margin-right:10px;
+}
+.info-icon{
+  font-size:12px;
+  line-height: 18px;
+  color:#25aab1;
+  position:relative;
+margin-top:-10px;
+}
+.slist text{
+  margin-left:10px;
+  font-size:14px;
+  color:#466466;
+}

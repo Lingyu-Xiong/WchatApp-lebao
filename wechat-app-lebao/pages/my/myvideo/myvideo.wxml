@@ -1,0 +1,32 @@
+<!--pages/my/myvideo/myvideo.wxml-->
+<view class='select'>
+  <view class='serve-select'>
+    <icon class='iconfont icon-search'></icon>
+    <input class='selinput' type='text' value='{{inputvideo}}' placeholder='搜索视频' placeholder-class='place-holder' bindinput='inputSelect' bindconfirm='search'></input>
+    <icon wx:if='{{inputvideo.length>0}}' class='iconfont icon-close' bindtap='clearSelect'></icon>
+  </view>
+  <icon class='iconfont icon-camera' bindtap='choosevideo'></icon>
+</view>
+<view class='myvideo-mask' wx:if="{{maskShow}}">
+  <view class='invisible_model' catchtap='invisible'></view>
+  <view class='push-select'>
+    <view class='select-single local' bindtap='localUpload'>从本地上传(不超过30s)</view>
+    <view class='select-single' bindtap='shootUpload'>拍摄视频(不超过30s)</view>
+  </view>
+</view>
+<view class='video-con' wx:if='{{myvideoList.length!==0}}'>
+  <view wx:for='{{myvideoList}}'>
+    <view class='video-box'>
+      <view class='video-title'>
+        <view class='myvideo-update-time'>{{item.status}}</view>
+        <view class='update-time'>{{item.addTime}}</view>
+      </view>
+      <video data-id='{{item.id}}' id="video{{item.id}}" class="video" src="{{item.url}}" bindtap='videoPlay'  controls></video>
+      <view class='video-desc' bindtap='myvideodetail' data-id='{{item.id}}'>{{item.description}}</view>
+    </view>
+  </view>
+</view>
+<view wx:else class='no-data'>
+  <icon class='iconfont icon-notfound'></icon>
+  <view class='no-data-text'>暂无发布视频 (￣へ￣) </view>
+</view>

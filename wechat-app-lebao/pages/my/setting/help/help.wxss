@@ -1,0 +1,65 @@
+/* pages/my/setting/help/help.wxss */
+@import "../../person.wxss";
+
+.block{
+  height:500px
+}
+.search{
+  width: 90%;
+  height: 30px;
+  margin-left: 5%;
+  margin-top: 10px;
+  border-radius: 10px;
+  background: #fbfafa;
+  box-shadow: 2px 2px 4px rgba(131, 131, 131, 0.2);
+}
+.icon-search{
+  padding-left: 20px;
+  padding-right: 10px;
+  line-height: 30px;
+  color: #466466;
+  font-size: 18px;
+}
+.search-input{
+  width: calc(100% - 50px);
+  height: 100%;
+  background: transparent;
+  color: #466466;
+  font-size: 14px;
+  float: right;
+}
+
+.banner {
+  display: inline-block;
+  text-align: center;
+  border-style: none none solid none;
+  border-width: 0.5px;
+  border-color: #e9e9e9;
+}
+
+.icon-back {
+  position:initial;
+  float: left;
+  padding-right: 0;
+}
+.content{
+  width:100%;
+  margin:0;
+}
+.question-list{
+  margin:0;
+}
+.single-list{
+  height:auto;
+}
+.single-list .text{
+  padding-left:14px;
+  padding-right:14px;
+}
+.single-list .text-answer{
+  background-color:#fbfafa;
+  line-height: 30px;
+}
+.hidden{
+display:none;
+}

@@ -1,0 +1,19 @@
+<!--pages/examReg/examReg.wxml-->
+<view class='exam-content'>
+  <view class='exam-list'>
+    <view class='exam-single' wx:for='{{myapplyList}}' >
+      <view class='script' data-id='{{item.examId}}' bindtap='examdetail'>
+        <view class='exam-name'>{{item.examName}}</view>
+        <view class='exam-time'><icon class='iconfont icon-nocourse'></icon>报名日期:{{item.addTime}} </view>
+      </view>
+      <view class='viewdetail' wx:if='{{item.status}}'><text>已报名</text></view>
+      <view class='viewdetail nopay' wx:if='{{!item.status}}' data-id='{{item.id}}' bindtap='payagain'><text class='nopaytxt'>待支付</text></view>
+       <view class='bg-circle-top'></view>
+      <view class='bg-circle-bottom'></view>
+    </view>
+  </view>
+  <view wx:if='{{myapplyList.length==0}}' class='no-data'>
+    <icon class='iconfont icon-notfound'></icon>
+    <view class='no-data-text'>暂无报名记录(￣へ￣) </view>
+  </view>
+</view>

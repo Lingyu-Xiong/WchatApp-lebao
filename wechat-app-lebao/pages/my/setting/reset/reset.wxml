@@ -1,0 +1,38 @@
+<!--pages/my/setting/reset/reset.wxml-->
+<view class='content'>
+  <view class='content'>
+    <view class='form'>
+      <view wx:if='{{event != "login"}}' class='form-item'>
+        <view class='desc {{isIphone5?"desc-i5":""}}'>+86</view>
+        <icon wx:if='{{phone.length>0}}' class='iconfont icon-close' bindtap='clearPhone'></icon>
+        <input class='box input {{phone_valid}} {{isIphone5?"box-i5":""}} {{isIphone5?"input-i5":""}}' type='number' value='{{phone}}' bindinput='inputPhone' placeholder='请输入您的手机号码' placeholder-class='place-holder'></input>
+      </view>
+      <view wx:if='{{event=="login"}}' class='form-item'>
+        <view class='desc {{isIphone5? "desc-i5": ""}}'>旧密码</view>
+        <icon wx:if='{{password.length>0}}' class='iconfont icon-close' bindtap='clearPassword'></icon>
+        <input class='box input {{isIphone5? "box-i5": ""}} {{isIphone5? "input-i5": ""}}' value='{{password}}' bindinput='inputPassword' placeholder='请输入当前{{eventText}}密码' placeholder-class='place-holder' type='password'>
+        </input>
+      </view>
+      <view wx:if='{{event !="phone" }}' class='form-item'>
+        <view class='desc {{isIphone5? "desc-i5": ""}}'>新密码</view>
+        <icon wx:if='{{newPassword.length>0}}' class='iconfont icon-close' bindtap='clearNewPassword'></icon>
+        <input class='box input {{new_password_valid}} {{isIphone5? "box-i5": ""}} {{isIphone5? "input-i5": ""}}' value='{{newPassword}}' bindinput='inputNewPassword' placeholder='请输入新的{{eventText}}密码' placeholder-class='place-holder' type='number' password="true" maxlength="6" maxlength='{{passMaxLen}}'></input>
+      </view>
+      <view wx:if='{{event != "phone"}}' class='form-item'>
+        <view class='desc {{isIphone5?"desc-i5":""}}'>确认密码</view>
+        <icon wx:if='{{ensurePassword.length>0}}' class='iconfont icon-close' bindtap='clearEnsurePassword'></icon>
+        <input class='box input {{ensurePassword_valid}} {{isIphone5?"box-i5":""}} {{isIphone5?"input-i5":""}}' value='{{ensurePassword}}' bindinput='inputEnsurePassword' placeholder='再次输入新的{{eventText}}密码' placeholder-class='place-holder' type='number' password="true" maxlength="6">
+        </input>
+      </view>
+      <view wx:if='{{event!="login"}}' class='form-item '>
+        <view class='desc {{isIphone5?"desc-i5":""}}'>验证码</view>
+        <view class='box {{isIphone5?"box-i5":""}}'>
+          <getcode phoneInfo='{{modifyPhone}}' url='{{url}}' bind:getcode='getCode' background-color='#f8f8f8' border='1rpx #f8f8f8 solid' btn-color='#466466 ' input-color='#466466' place-holder-color='e9e9e9' is-transparent='0'></getcode>
+        </view>
+      </view>
+    </view>
+    <view wx:if='{{errmsg.length>0}}' class='tip'>*{{errmsg}}</view>
+    <button class='person-btn' bindtap='{{ensureEvent}}'>确认</button>
+    <view class='blank'></view>
+  </view>
+</view>

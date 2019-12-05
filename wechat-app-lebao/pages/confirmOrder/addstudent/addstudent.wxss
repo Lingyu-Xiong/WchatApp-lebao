@@ -1,0 +1,45 @@
+.sign-up{
+   width: 100%;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #25aab1;
+  color:#fff;
+}
+.sign-up-top{
+   width: 100%;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  top: 0;
+  left: 0;
+  background-color: #25aab1;
+  color:#fff;
+}
+.div-icon{
+   position:absolute;
+  right:10px;
+}
+.student-list{
+  display:flex;
+  flex-direction:row;
+  align-items: center;
+  background-color:#fff;
+  border-bottom:1px #eeeeee solid; 
+}
+.multi-img{
+  width:20px;
+  height:20px;
+  margin-left:10px;
+}
+.single-list{
+  margin-top:8px;
+   padding:15px;
+}
+.single-list .text{
+  font-size:16px;
+  color:#466466;
+}

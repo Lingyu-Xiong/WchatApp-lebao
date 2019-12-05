@@ -1,0 +1,123 @@
+/* pages/my/order/details/details.wxss */
+@import '../../../createOrder/create.wxss';
+@import '/css/modal.wxss';
+
+page {
+  background-color: #fff;
+}
+
+.blank {
+  width: 100%;
+  height: 16px;
+}
+
+.status {
+  width: calc(100% - 16px);
+  height: 24px;
+  text-align: right;
+  color: #25aab1;
+  font-size: 14px;
+}
+
+.part {
+  width: calc(100% - 32px);
+  height: 80px;
+  margin-left: 16px;
+}
+
+.pic {
+  width: 27%;
+  height: 100%;
+  float: left;
+}
+
+.pic image {
+  width: 100%;
+  height: 100%;
+}
+
+.goods {
+  width: calc(73% - 8px);
+  height: 100%;
+  float: left;
+  color: #466466;
+  text-align: left;
+  margin-left: 8px;
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.goods text {
+  display: block;
+  margin-top: 4px;
+}
+
+.goods .name {
+  color: #466466;
+  font-size: 16px;
+}
+
+.orderprice {
+  width: calc(100% - 16px);
+  height: 30px;
+  padding-right: 16px;
+  font-size: 19px;
+  color: #25aab1;
+  line-height: 30px;
+  text-align: right;
+}
+
+.message {
+  width: calc(100% - 16px);
+  margin-left: 8px;
+  line-height: 22px;
+  
+}
+.desc{
+  border-bottom:1px #eee solid;
+}
+.blank {
+  height: 20px;
+}
+
+.icon-address {
+  font-size: 16px;
+  margin-left: -16px;
+}
+
+.order-event {
+  width: 100%;
+  height: 30px;
+  margin-top:10px;
+}
+
+.order-btn {
+  width: 74px;
+  height: 30px;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 30px;
+  border: 0.5px #25aab1 solid;
+  margin-right: 14px;
+  float: right;
+  color: #25aab1;
+  text-align: center;
+}
+
+.first-import {
+  color: #fff;
+  background-color: #25aab1;
+}
+
+.didabled {
+  color: #bbbec4;
+  border: 0.5px #bbbec4 solid;
+}
+
+.single {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

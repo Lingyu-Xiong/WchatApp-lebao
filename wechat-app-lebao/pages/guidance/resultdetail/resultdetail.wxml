@@ -1,0 +1,18 @@
+<view class='result-detail'>
+  <view class='re-detail-title'>
+    您的诊断结果...
+  </view>
+  <view class='re-detail-card'>
+    <view class='detail-con-con'>
+      <view class='expert-label'>反馈时间:</view>
+      <view class='expert-con'></view>
+      <view class='expert-label'>建议您:</view>
+      <view class='expert-con'>{{feed.feedback}}</view>
+    </view>
+  </view>
+  <!-- <view class='test-next'>
+    <view class='test-next-btn' bindtap='tohome'>
+      返回首页
+    </view>
+  </view> -->
+</view>

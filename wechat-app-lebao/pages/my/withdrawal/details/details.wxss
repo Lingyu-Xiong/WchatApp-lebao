@@ -1,0 +1,24 @@
+/* pages/my/withdrawal/details/details.wxss */
+@import "../../person.wxss";
+@import '../../../createOrder/create.wxss';
+.message1{
+  width: calc(100% - 52px);
+  margin-left: 36px;
+  line-height: 20px;
+}
+.content {
+  width: 100%;
+  margin: 0;
+}
+.content-step{
+  width: calc(100% - 64px);
+  margin-left: 32px;
+}
+.single {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.message{
+  line-height: 25px;
+}

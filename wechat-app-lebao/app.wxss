@@ -1,0 +1,240 @@
+/**app.wxss
+@import "/components/wxParse/wxParse.wxss";**/
+page{
+  background-color: #f6f6f6;
+}
+
+@font-face {
+  font-family: 'iconfont';  /* project id 1126546 */
+  src: url('//at.alicdn.com/t/font_1126546_al5ugmiqiyd.eot');
+  src: url('//at.alicdn.com/t/font_1126546_al5ugmiqiyd.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1126546_al5ugmiqiyd.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1126546_al5ugmiqiyd.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1126546_al5ugmiqiyd.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1126546_al5ugmiqiyd.svg#iconfont') format('svg');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 18px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-huodong-copy::before{
+  content: '\e600'
+}
+.icon-huodong::before{
+  content: '\e629'
+}
+.icon-camera::before{
+  content: '\e681'
+}
+.icon-dianzan::before{
+  content: '\e618'
+}
+.icon-liulan::before{
+  content: '\e61e'
+}
+.icon-pinglun::before{
+  content: '\e61f'
+}
+.icon-syn::before{
+  content: '\e680'
+}
+.icon-reddot::before{
+  content: '\e602'
+}
+.icon-cha::before{
+  content: '\e674'
+}
+.icon-yue::before{
+  content: '\e927'
+}
+.icon-kefu::before{
+  content: '\e617'
+}
+.icon-Astronaut::before{
+  content: '\f7af'
+}
+.icon-school::before{
+  content: '\e6d0'
+}
+.icon-shouzhi::before{
+  content: '\e62e'
+}
+.icon-shizhong::before{
+  content: '\e72f'
+}
+.icon-deletestu::before{
+  content: '\e67e'
+}
+.icon-tianjia::before{
+   content: '\e616'
+}
+.icon-xiangshang::before{
+  content: '\e665'
+}
+.icon-dianhua1::before{
+  content: '\e606'
+}
+.icon-chat::before{
+  content: '\e63c'
+}
+.icon-chatchat::before{
+  content: '\e63c'
+}
+.icon-alipay::before{
+  content: '\e61b'
+}
+.icon-wxpay::before{
+  content: '\e634'
+}
+.icon-back::before{
+  content: '\e61c'
+}
+.icon-go::before{
+  content: '\e6bf'
+}
+.icon-selected::before{
+  content: '\e64c'
+}
+.icon-money::before{
+  content: '\e611'
+}
+.icon-add::before{
+  content: '\e601'
+}
+.icon-select::before{
+  content: '\e612'
+}
+.icon-search::before{
+  content: '\e60e'
+}
+.icon-notfound::before{
+  content: '\e631'
+}
+.icon-address::before{
+  content: '\e939'
+}
+.icon-address0::before{
+  content: '\e939'
+}
+.icon-nocourse::before{
+  content: '\e63b'
+}
+.icon-noteacher::before{
+  content: '\e69d'
+}
+.icon-course-desc::before{
+  content: '\e60a'
+}
+.icon-pay::before{
+  content: '\e61d'
+}
+.icon-discount::before{
+  content: '\e646'
+}
+.icon-phone::before{
+  content: '\e621'
+}
+.icon-close::before{
+  content: '\e615'
+}
+.icon-delete::before{
+  content: '\e625'
+}
+.icon-no-record::before{
+  content: '\e636'
+}
+.icon-pay-message::before{
+  content: '\e613'
+}
+.icon-refund::before{
+  content: '\e690'
+}
+.icon-garbage::before{
+  content: '\e67e'
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+.cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.block{
+  /**width: 90%;
+  margin-left: 5%;*/
+  background-color: #ffffff;
+  margin-top: 16px;
+  box-shadow: 2px 2px 4px rgba(131, 131, 131, 0.2);
+}
+.banner{
+  width: 100%;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+}
+.banner-line{
+  margin: 13px 13px;
+  margin-left: 18px;
+  width: 4px;
+  height: 14px;
+  background-color: #25aab1;
+}
+.banner text{
+  font-size: 14px;
+  color: #466466;
+  line-height: 40px;
+}
+.invalid{
+  border: 1rpx #da2b2b solid;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+button[disabled][type="default"], wx-button[disabled]:not([type]) {
+  background-color: transparent !important;
+  border: none !important;
+}
+.right-bottom{
+  position: fixed;
+  bottom: 10%;
+  right: 10rpx;
+  padding: 0;
+  margin: 0;
+   z-index: 9999;
+}
+.chat{
+  border: none;
+  background-color: rgba(37, 170, 177, 0.8);
+  width: 80rpx;
+  height: 80rpx;
+  text-align: center;
+  padding:0;
+  margin-bottom: 10rpx;
+  z-index: 9999;
+  border-radius: 100px;
+  font-size:30rpx;
+  color:#fff;
+}
+.chat::after{
+  border: none;
+}
+.icon-chat , .icon-chatchat{
+  color: #fff;
+  font-size: 65rpx;
+  line-height: 70rpx;
+}

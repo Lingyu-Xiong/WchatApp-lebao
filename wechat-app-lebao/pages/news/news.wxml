@@ -1,0 +1,15 @@
+<view class='news-content'>
+<image class='news-banner' src='{{bannerUrl}}'></image>
+  <view class='news-list'>
+    <view class='news-single' wx:for='{{newsList}}' data-id='{{item.id}}' bindtap='newsDetails'>
+      <view class='script'>
+        <view class='news-title'>{{item.title}}</view>
+        <view class='news-tag'>
+          <view class='time'>{{item.updateTime}}</view>
+          <view class='readcount'>{{item.readCount}}人阅读</view>
+        </view>
+      </view>
+      <image class='news-pic' mode='scaleToFill'  src='{{item.picUrl}}'></image>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,51 @@
+<!--pages/school/details/teacher/teacher.wxml-->
+<view class='content {{isIphone5?"content-i5":""}}'>
+  <view class='blank'></view>
+  <view class='body'>
+    <view wx:if='{{hasPic}}'>
+      <image class='body-pic {{isIphone5?"body-pic-i5":""}}' mode='aspectFit' src='{{picUrl}}'></image>
+    </view>
+    <view wx:else class='teacher-pic {{isIphone5?"teacher-pic-i5":""}}'>
+      <image mode='aspectFit' wx:if='{{gender==0}}' src='../../../../images/teacher-girl.png'></image>
+      <image mode='aspectFit' wx:else src='../../../../images/teacher-boy.png'></image>
+    </view>
+
+    <view class='bodycontent'>
+      <view class='body-content'>
+        <view class='course-name'>{{teacherName}}</view>
+        <view class='blank'></view>
+      </view>
+    </view>
+    <view class='body-content'>
+      <view class='text'>教师星级：{{star}}</view>
+      <view class='text' bindtap='callPhone'>联系方式：
+        <icon class='iconfont icon-phone'></icon>{{phone}}</view>
+      <view class='blank'></view>
+    </view>
+  </view>
+</view>
+<view class='content {{isIphone5?"content-i5":""}}'>
+  <view class='div1 desc'>
+    <view class='course-desc'>
+      <icon class='iconfont icon-noteacher div-icon'></icon> 教师介绍</view>
+    <text style='margin-left:16px'>{{desc}}</text>
+  </view>
+</view>
+<view class='content {{isIphone5?"content-i5":""}}'>
+  <view class='div1 desc'>
+    <view class='course-desc'>
+      <icon class='iconfont icon-course-desc div-icon'></icon> 相关课程
+    </view>
+    <view wx:if='{{course.length!=0}}'>
+      <view wx:for='{{course}}' style='margin-left:16px'>
+        {{item}}
+      </view>
+    </view>
+    <view wx:else>
+      <view class='nodata {{isIphone5?"nodata-i5":""}}'>
+        <icon class='iconfont icon-nocourse'></icon>
+        <view class='nodata-text'>暂无开设课程</view>
+      </view>
+    </view>
+  </view>
+</view>

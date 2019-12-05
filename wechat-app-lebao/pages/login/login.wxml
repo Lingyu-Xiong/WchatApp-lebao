@@ -1,0 +1,24 @@
+<!--pages/login/login.wxml-->
+<image class='cover' src='../../images/login/loginbg.png'></image>
+<view class='title'>银校联盟</view>
+<view class='title-decsript'>( 乐宝科技 )</view>
+<view class='btn border first-input'>
+  <input class='input' value='{{username}}' type='text' bindinput='inputName' maxlength='20' cursor='28' placeholder='请输入用户名' placeholder-class="place-holder">
+  </input>
+  <icon wx:if='{{username.length>0}}' class='iconfont icon-close' bindtap='clearUsername'></icon>
+</view>
+<view class='btn border'>
+  <input class='input' value='{{password}}' type='password' bindinput='inputPassword' placeholder='请输入密码' placeholder-class="place-holder">
+  </input>
+  <icon wx:if='{{password.length>0}}' class='iconfont icon-close' bindtap='clearPassword'></icon>
+</view>
+<view wx:if='{{errmsg.length>0}}' class='btn errmsg'>
+  {{errmsg}}
+</view>
+<button class='btn login' bindtap='login'>绑定用户</button>
+<button class='btn code-login' bindtap='codeLogin'>绑定手机</button>
+<view class='events'>
+  <view class='event' bindtap='goToRegister'>还没账号？立即注册</view>
+  <view class='line'></view>
+  <view class='event' bindtap='findPassword'>忘记密码</view>
+</view>

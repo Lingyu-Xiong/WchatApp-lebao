@@ -1,0 +1,31 @@
+<!--pages/questionBank/questionBank.wxml-->
+<view class="questionBank">
+  <view  class='banner-pic'>
+    <image mode='aspectFit' src='{{bannerUrl}}'></image>
+  </view>
+  <view class="item-title">请选择要挑战的类目：</view>
+  <scroll-view scroll-x="true" class="scroll" >
+    <!--  display: inline-block-->
+    <view class="item-card" wx:for='{{categoryList}}' wx:key='*this' data-id='{{item.categoryId}}' data-title='{{item.title}}' bindtap='select'>
+      <image  wx:if='{{categoryId==item.categoryId}}' mode='aspectFit' src='{{item.src1}}'></image>
+      <image  wx:else  mode='aspectFit' src='{{item.src}}'></image>
+    </view>
+  </scroll-view>
+  <view class="ranking">
+    <view class="ranking-left" bindtap='goToRanking'>
+      <image mode='aspectFit' src='{{rankinguUrl}}'></image>
+    </view>
+     <view class="ranking-right">
+       <view class="ic" wx:for='{{rankingRight}}' wx:key='*this' data-id='{{item.id}}' bindtap='goToLearn'> 
+          <image mode='aspectFit' src='{{item.src}}'></image>
+          <view>{{item.text}}</view>
+       </view>
+     </view>
+  </view>
+  <view class="button" style="background-image: url('{{buttonUrl}}');" bindtap='goToChallenge'>
+   开始挑战 
+  </view>
+</view>
+
+   
+

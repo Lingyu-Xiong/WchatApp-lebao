@@ -1,0 +1,73 @@
+/* components/select.wxss */
+
+.com-selectBox {
+  width: 100%;
+  height: 40px;
+}
+
+.com-sContent {
+  border: 0.5px solid #e9e9e9;
+  border-radius: 10px;
+  background: white;
+  font-size: 13px;
+  color: #466466;
+  position: relative;
+  height: 40px;
+  line-height: 40px;
+}
+
+.com-sImg {
+  position: absolute;
+  right: 16px;
+  top: 14px;
+  width: 11px;
+  height: 14px;
+  transition: all 0.3s ease;
+}
+.com-sImg-short {
+  top: 7px;
+}
+.com-sTxt {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 20px 0 14px;
+  font-size: 13px;
+}
+
+.com-sList {
+  background: white;
+  width: 100%;
+  max-height: 200px;
+  position: relative;
+  border: 0.5px solid #e9e9e9;
+  border-top: none;
+  box-sizing: border-box;
+  border-radius: 10px;
+  z-index: 3;
+  overflow:hidden;
+}
+
+.com-sItem {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  border-top: 0.5px solid #e9e9e9;
+  padding: 0 20px 0 14px;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+  color: #466466;
+}
+
+.com-sItem:first-child {
+  border-top: none;
+}
+.picsrc{
+  width: 24px;
+  height: 24px;
+  margin: 8px 0px;
+  float: left
+}
